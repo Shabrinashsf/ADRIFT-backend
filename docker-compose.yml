@@ -1,0 +1,68 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    container_name: ADRIFT-postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Go Application
+  app:
+    container_name: ADRIFT-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT}:8888"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+    restart: always
+    environment:
+      # App
+      APP_ENV: ${APP_ENV}
+      APP_MODE: ${APP_MODE}
+      IS_PRODUCTION: ${IS_PRODUCTION}
+      APP_URL: ${APP_URL}
+      APP_PORT: ${APP_PORT}
+
+      # Database
+      DB_HOST: postgres
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+
+      # SMTP
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_SENDER_NAME: ${SMTP_SENDER_NAME}
+      SMTP_SENDER_EMAIL: ${SMTP_SENDER_EMAIL}
+      SMTP_AUTH_EMAIL: ${SMTP_AUTH_EMAIL}
+      SMTP_AUTH_PASSWORD: ${SMTP_AUTH_PASSWORD}
+
+      # AWS S3
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      AWS_REGION: ${AWS_REGION}
+      S3_BUCKET: ${S3_BUCKET}
+
+      # Security
+      JWT_SECRET: ${JWT_SECRET}
+      AES_KEY: ${AES_KEY}
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,50 @@
+[
+	{
+        "id": "019d7374-5631-7225-ad8b-e0e178fef920",
+		"name": "Admin RPL",
+		"email": "admin.rpl@example.com",
+		"password": "Admin123!",
+		"phone_number": "081234567890",
+		"prodi_id": "38b55dcb-be74-443e-9cc2-79e1e4755f25",
+		"batch": 2020,
+		"role": "Admin",
+		"profile_img": "",
+		"is_verified": true
+	},
+	{
+        "id": "019d7374-5638-7a24-8cdc-7d622bf8bd79",
+		"name": "Mahasiswa RPL",
+		"email": "mahasiswa.rpl@example.com",
+		"password": "User123!",
+		"phone_number": "081234567891",
+		"prodi_id": "38b55dcb-be74-443e-9cc2-79e1e4755f25",
+		"batch": 2022,
+		"role": "User",
+		"profile_img": "",
+		"is_verified": true
+	},
+    {
+        "id": "019d733c-726f-7315-ade2-039abdf8edbe",
+        "name": "Shabrina Amalia Safaana",
+		"email": "shabrinaamalia860@gmail.com",
+		"password": "New0Most0secure",
+		"phone_number": "089999999999",
+		"prodi_id": "38b55dcb-be74-443e-9cc2-79e1e4755f25",
+		"batch": 2023,
+		"role": "User",
+		"profile_img": "/api/assets/profiles/shabrinaamalia860@gmail.com.jpg",
+		"is_verified": true
+    },
+	{
+        "id": "019d734c-726f-7315-ade2-039abdf8edbe",
+        "name": "Shab",
+		"email": "shabrina_amalia860@gmail.com",
+		"password": "New0Most0secure",
+		"phone_number": "089999989989",
+		"prodi_id": "38b55dcb-be74-443e-9cc2-79e1e4755f25",
+		"batch": 2024,
+		"role": "User",
+		"profile_img": "",
+		"is_verified": true
+    }
+]
