@@ -1,4 +1,4 @@
-# RPLibrary Backend API
+# ADRIFT Backend API
 
 ## 1. Setup Project
 
