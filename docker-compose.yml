@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "${APP_PORT}:8888"
+      - "${APP_PORT}:8000"
     depends_on:
       - postgres
     networks:

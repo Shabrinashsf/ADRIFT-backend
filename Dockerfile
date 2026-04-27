@@ -28,7 +28,7 @@ RUN chown -R appuser:appuser /app
 
 USER appuser
 
-EXPOSE 8888
+EXPOSE 8000
 
 ENV TZ=Asia/Jakarta
 ENV APP_ENV=production

@@ -62,6 +62,6 @@ go run main.go --seed
 go run main.go
 ```
 
-Server default berjalan di: `http://localhost:8888`
+Server default berjalan di: `http://localhost:8000`
 
 Fait avec amour by [Shabrinashsf](https://github.com/Shabrinashsf)

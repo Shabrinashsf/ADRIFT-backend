@@ -44,7 +44,7 @@ func NewRestConfig(db *gorm.DB) *RestConfig {
 	// Get configuration
 	port := os.Getenv("APP_PORT")
 	if port == "" {
-		port = "8888"
+		port = "8000"
 	}
 
 	mode := os.Getenv("APP_ENV")
