@@ -24,6 +24,9 @@ type User struct {
 	Role           UserRole  `json:"role" gorm:"default:STUDENT"`
 	IsVerified     bool      `json:"is_verified"`
 
+	FRSPlans        []FRSPlan         `json:"frs_plans,omitempty"`
+	StudentProgress []StudentProgress `json:"student_progress,omitempty"`
+
 	Timestamp
 }
 
@@ -47,4 +50,8 @@ func (u *User) BeforeSave(tx *gorm.DB) error {
 		u.Password = hashedPassword
 	}
 	return nil
+}
+
+func (u *User) TableName() string {
+	return "users"
 }
