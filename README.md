@@ -1,4 +1,4 @@
-# RPLibrary Backend API
+# ADRIFT Backend API
 
 ## 1. Setup Project
 
@@ -41,7 +41,7 @@ Referensi lengkap: [.env.example](.env.example)
 1. Buka [Google Account](https://myaccount.google.com/)
 2. Pilih menu [Security](https://myaccount.google.com/security) dan aktifkan 2-Step Verification.
 3. Setelah itu, pilih menu [App Passwords](https://myaccount.google.com/apppasswords)
-4. Buat nama aplikasi (ex: RPLibrary)
+4. Buat nama aplikasi (ex: ADRIFT)
 5. Salin password yang diberikan, lalu masukkan ke variabel `SMTP_AUTH_PASSWORD` di file `.env`
 
 ### 1.3 Menjalankan Dengan Docker

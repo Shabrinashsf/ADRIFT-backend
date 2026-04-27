@@ -75,7 +75,7 @@ func (rc *RestConfig) Start() error {
 	}
 
 	go func() {
-		myFigure := figure.NewColorFigure("RPLibrary Backend", "", "blue", true)
+		myFigure := figure.NewColorFigure("ADRIFT Backend", "", "blue", true)
 		myFigure.Print()
 		fmt.Printf("Starting server on %s\n", addr)
 

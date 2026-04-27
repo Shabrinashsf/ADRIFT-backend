@@ -44,7 +44,7 @@ func NewJWTService() JWTService {
 
 	return &jwtService{
 		secretKey: secretKey,
-		issuer:    "RPLibrary",
+		issuer:    "ADRIFT",
 	}
 }
 

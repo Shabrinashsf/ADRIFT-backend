@@ -108,7 +108,7 @@ func (s *userService) RegisterUser(ctx context.Context, req dto.UserRegistration
 	// 	return dto.UserResponse{}, dto.ErrMakeMail
 	// }
 
-	// if err := mail.SendEmail(user.Email, "RPLibrary - Verification Email").Error; err != nil {
+	// if err := mail.SendEmail(user.Email, "ADRIFT - Verification Email").Error; err != nil {
 	// 	return dto.UserResponse{}, dto.ErrSendMail
 	// }
 
@@ -183,7 +183,7 @@ func (s *userService) SendVerificationEmail(ctx context.Context, req dto.SendVer
 		return nil
 	}
 
-	if err := mail.SendEmail(user.Email, "RPLibrary - Verification Email").Error; err != nil {
+	if err := mail.SendEmail(user.Email, "ADRIFT - Verification Email").Error; err != nil {
 		logger.Errorf("failed to send verification email to %s: %v", req.Email, err)
 		return nil
 	}
@@ -286,7 +286,7 @@ func (s *userService) ForgotPassword(ctx context.Context, req dto.ForgotPassword
 		return nil
 	}
 
-	if err := mail.SendEmail(user.Email, "RPLibrary - Reset Password").Error; err != nil {
+	if err := mail.SendEmail(user.Email, "ADRIFT - Reset Password").Error; err != nil {
 		logger.Errorf("failed to send forgot-password email to %s: %v", req.Email, err)
 		return nil
 	}

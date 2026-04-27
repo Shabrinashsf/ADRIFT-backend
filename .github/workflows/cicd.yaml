@@ -1,0 +1,30 @@
+name: Deploy Development
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            # Ensure Go binary is in the PATH
+            export PATH=$PATH:/usr/bin
+
+            cd /var/www/ADRIFT-backend
+            sudo git stash
+            sudo git checkout main
+            sudo git pull --rebase origin main
+            sudo git status
+            sudo go build -o main .
+            sudo systemctl restart ADRIFT-backend.service
+            sudo systemctl status ADRIFT-backend.service --no-pager
