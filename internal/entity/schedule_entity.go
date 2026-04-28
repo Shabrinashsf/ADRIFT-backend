@@ -52,10 +52,10 @@ type Schedule struct {
 	Prodi        ProdiType    `json:"prodi"`
 	Term         TermSemester `json:"term"`
 
-	FRSPlanItems []FRSPlanItem `json:"frs_plan_items,omitempty"`
+	FRSPlanItems []FRSPlanItem `gorm:"foreignKey:ScheduleID;references:ID" json:"frs_plan_items,omitempty"`
 
-	Lecture *Lecture `gorm:"foreignKey:LectureID"`
-	Course  *Course  `gorm:"foreignKey:CourseID"`
+	Lecture *Lecture `gorm:"foreignKey:LectureID;references:ID"`
+	Course  *Course  `gorm:"foreignKey:CourseID;references:ID"`
 }
 
 func (s *Schedule) TableName() string {

@@ -8,9 +8,9 @@ type PathEdge struct {
 	ToCourseID   uuid.UUID `json:"to_course_id"`
 	LabPathID    uuid.UUID `json:"lab_path_id"`
 
-	FromCourse *Course  `gorm:"foreignKey:FromCourseID"`
-	ToCourse   *Course  `gorm:"foreignKey:ToCourseID"`
-	LabPath    *LabPath `gorm:"foreignKey:LabPathID"`
+	FromCourse *Course  `gorm:"foreignKey:FromCourseID;references:ID"`
+	ToCourse   *Course  `gorm:"foreignKey:ToCourseID;references:ID"`
+	LabPath    *LabPath `gorm:"foreignKey:LabPathID;references:ID"`
 }
 
 func (pe *PathEdge) TableName() string {

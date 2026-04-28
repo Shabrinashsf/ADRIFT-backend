@@ -10,9 +10,9 @@ type FRSPlan struct {
 	Term         TermSemester `json:"term"`
 	TotalCredit  int          `json:"total_credit"`
 
-	FRSPlanItems []FRSPlanItem `json:"frs_plan_items,omitempty"`
+	FRSPlanItems []FRSPlanItem `gorm:"foreignKey:FRSPlanID;references:ID" json:"frs_plan_items,omitempty"`
 
-	User *User `gorm:"foreignKey:UserID"`
+	User *User `gorm:"foreignKey:UserID;references:ID"`
 }
 
 func (fp *FRSPlan) TableName() string {

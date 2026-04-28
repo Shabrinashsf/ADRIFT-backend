@@ -24,8 +24,8 @@ type User struct {
 	Role           UserRole  `json:"role" gorm:"default:STUDENT"`
 	IsVerified     bool      `json:"is_verified"`
 
-	FRSPlans        []FRSPlan         `json:"frs_plans,omitempty"`
-	StudentProgress []StudentProgress `json:"student_progress,omitempty"`
+	FRSPlans        []FRSPlan         `gorm:"foreignKey:UserID;references:ID" json:"frs_plans,omitempty"`
+	StudentProgress []StudentProgress `gorm:"foreignKey:UserID;references:ID" json:"student_progress,omitempty"`
 
 	Timestamp
 }

@@ -7,7 +7,7 @@ type LabPath struct {
 	Name  string    `json:"name"`
 	Color string    `json:"color"`
 
-	PathEdges []PathEdge `json:"path_edges,omitempty"`
+	PathEdges []PathEdge `gorm:"foreignKey:LabPathID;references:ID" json:"path_edges,omitempty"`
 
 	Timestamp
 }

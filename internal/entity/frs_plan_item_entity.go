@@ -7,8 +7,8 @@ type FRSPlanItem struct {
 	FRSPlanID  uuid.UUID `json:"frs_plan_id"`
 	ScheduleID uuid.UUID `json:"schedule_id"`
 
-	FRSPlan  *FRSPlan  `gorm:"foreignKey:FRSPlanID"`
-	Schedule *Schedule `gorm:"foreignKey:ScheduleID"`
+	FRSPlan  *FRSPlan  `gorm:"foreignKey:FRSPlanID;references:ID"`
+	Schedule *Schedule `gorm:"foreignKey:ScheduleID;references:ID"`
 }
 
 func (fpi *FRSPlanItem) TableName() string {

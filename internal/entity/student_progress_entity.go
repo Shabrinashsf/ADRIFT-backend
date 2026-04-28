@@ -22,8 +22,8 @@ type StudentProgress struct {
 	Grade     *string    `json:"grade"`
 	ClaimedAt *time.Time `json:"claimed_at"`
 
-	User   *User   `gorm:"foreignKey:UserID"`
-	Course *Course `gorm:"foreignKey:CourseID"`
+	User   *User   `gorm:"foreignKey:UserID;references:ID"`
+	Course *Course `gorm:"foreignKey:CourseID;references:ID"`
 }
 
 func (sp *StudentProgress) TableName() string {

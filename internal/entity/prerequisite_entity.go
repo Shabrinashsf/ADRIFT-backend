@@ -7,8 +7,8 @@ type Prerequisite struct {
 	CourseID  uuid.UUID `json:"course_id"`
 	RequireID uuid.UUID `json:"require_id"`
 
-	Course  *Course `gorm:"foreignKey:CourseID"`
-	Require *Course `gorm:"foreignKey:RequireID"`
+	Course  *Course `gorm:"foreignKey:CourseID;references:ID"`
+	Require *Course `gorm:"foreignKey:RequireID;references:ID"`
 }
 
 func (p *Prerequisite) TableName() string {

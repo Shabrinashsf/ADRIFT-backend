@@ -7,7 +7,7 @@ type Lecture struct {
 	Code string    `json:"code"`
 	Name string    `json:"name"`
 
-	Schedules []Schedule `json:"schedules,omitempty"`
+	Schedules []Schedule `gorm:"foreignKey:LectureID;references:ID" json:"schedules,omitempty"`
 }
 
 func (l *Lecture) TableName() string {
