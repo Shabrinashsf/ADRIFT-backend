@@ -85,6 +85,10 @@ func (s *userService) RegisterUser(ctx context.Context, req dto.UserRegistration
 		return dto.UserResponse{}, err
 	}
 
+	if err := tx.Commit().Error; err != nil {
+		return dto.UserResponse{}, err
+	}
+
 	// uncomment if email verification is needed, and comment out the IsVerified field in user entity struct
 	// if err := tx.Commit().Error; err != nil {
 	// 	return dto.UserResponse{}, err
