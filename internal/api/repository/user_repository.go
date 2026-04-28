@@ -53,7 +53,7 @@ func (r *userRepository) UpdateUser(ctx context.Context, tx *gorm.DB, id uuid.UU
 	}
 
 	var user entity.User
-	if err := tx.WithContext(ctx).Preload("Prodi").Where("id = ?", id).First(&user).Error; err != nil {
+	if err := tx.WithContext(ctx).Where("id = ?", id).First(&user).Error; err != nil {
 		return entity.User{}, err
 	}
 
@@ -66,7 +66,7 @@ func (r *userRepository) GetUserByID(ctx context.Context, tx *gorm.DB, id uuid.U
 	}
 
 	var user entity.User
-	if err := tx.WithContext(ctx).Preload("Prodi").Where("id = ?", id).First(&user).Error; err != nil {
+	if err := tx.WithContext(ctx).Where("id = ?", id).First(&user).Error; err != nil {
 		return entity.User{}, err
 	}
 
