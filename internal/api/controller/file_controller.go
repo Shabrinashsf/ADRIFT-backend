@@ -1,25 +1,32 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 
+	"ADRIFT-backend/internal/dto"
 	myerror "ADRIFT-backend/internal/pkg/error"
 	"ADRIFT-backend/internal/pkg/response"
+	"ADRIFT-backend/internal/pkg/storage"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 type FileController interface {
 	ServeUpload(ctx *gin.Context)
+	UploadFRSTempFile(ctx *gin.Context)
 }
 
-type fileController struct{}
+type fileController struct {
+	storage storage.FileSystemStorage
+}
 
-func NewFileController() FileController {
-	return &fileController{}
+func NewFileController(storage storage.FileSystemStorage) FileController {
+	return &fileController{storage: storage}
 }
 
 func (c *fileController) ServeUpload(ctx *gin.Context) {
@@ -29,7 +36,6 @@ func (c *fileController) ServeUpload(ctx *gin.Context) {
 		return
 	}
 
-	// Gin wildcard path usually starts with '/'. Keep it relative to the assets directory.
 	cleanPath := filepath.Clean(strings.TrimPrefix(rawPath, "/"))
 	if cleanPath == "." || filepath.IsAbs(cleanPath) {
 		response.NewFailed("invalid path", myerror.New("invalid path", http.StatusBadRequest)).Send(ctx)
@@ -70,4 +76,36 @@ func (c *fileController) ServeUpload(ctx *gin.Context) {
 	}
 
 	ctx.File(targetPathAbs)
+}
+
+func (c *fileController) UploadFRSTempFile(ctx *gin.Context) {
+	file, err := ctx.FormFile("file")
+	if err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_UPLOAD_FRS, myerror.New("file is required", http.StatusBadRequest)).Send(ctx)
+		return
+	}
+
+	fileExt := strings.ToLower(filepath.Ext(file.Filename))
+	if fileExt != ".xlsx" && fileExt != ".xls" {
+		response.NewFailed(dto.MESSAGE_FAILED_UPLOAD_FRS, dto.ErrInvalidExcelFile).Send(ctx)
+		return
+	}
+
+	fileName := fmt.Sprintf("frs_tmp_%s%s", uuid.New().String(), fileExt)
+	allowedMimes := []string{
+		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+		"application/vnd.ms-excel",
+		"application/zip",
+	}
+
+	objectKey, err := c.storage.UploadFile(fileName, file, "tmp/frs", allowedMimes...)
+	if err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_UPLOAD_FRS, err, nil).Send(ctx)
+		return
+	}
+
+	response.NewSuccess(dto.MESSAGE_SUCCESS_UPLOAD_FRS, dto.FRSTempUploadResponse{
+		ObjectKey: objectKey,
+		FileName:  fileName,
+	}).Send(ctx)
 }

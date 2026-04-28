@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"ADRIFT-backend/database/mappers"
 	"ADRIFT-backend/database/migrations"
 	"ADRIFT-backend/database/seeders"
 
@@ -14,6 +15,7 @@ import (
 func Command(db *gorm.DB) {
 	migrate := false
 	seed := false
+	frs := false
 	help := false
 
 	for _, arg := range os.Args[1:] {
@@ -22,6 +24,8 @@ func Command(db *gorm.DB) {
 			migrate = true
 		case "--seed":
 			seed = true
+		case "--frs":
+			frs = true
 		case "--help":
 			help = true
 		}
@@ -43,6 +47,12 @@ func Command(db *gorm.DB) {
 		log.Println("✅ Seeding completed successfully.")
 	}
 
+	if frs {
+		log.Println("Running FRS mapper...")
+		mappers.MapperFRS()
+		log.Println("✅ FRS mapping completed successfully.")
+	}
+
 	if help {
 		fmt.Println(`
 		Boilerplate Backend - CLI Commands
@@ -53,11 +63,13 @@ func Command(db *gorm.DB) {
 		Commands:
 			--migrate    Run database migrations
 			--seed       Run database seeders
+			--frs        Run FRS Excel mapper
 			--help       Show this help message
 
 		Examples:
 			go run main.go --migrate
 			go run main.go --seed
+			go run main.go --frs
 			go run main.go --help
 		`)
 	}
