@@ -47,12 +47,13 @@ type (
 	}
 
 	FRSUploadResponse struct {
-		FileURL      string           `json:"file_url"`
-		ObjectKey    string           `json:"object_key"`
-		FileName     string           `json:"file_name"`
-		AcademicYear string           `json:"academic_year"`
-		Term         string           `json:"term"`
-		NullRecords  []map[string]any `json:"null_records"`
+		FileURL             string           `json:"file_url"`
+		ObjectKey           string           `json:"object_key"`
+		FileName            string           `json:"file_name"`
+		AcademicYear        string           `json:"academic_year"`
+		Term                string           `json:"term"`
+		NullRecords         []map[string]any `json:"null_records"`
+		MissingLectureCodes []string         `json:"missing_lecture_codes,omitempty"`
 	}
 
 	FRSUploadDeleteRequest struct {
@@ -60,6 +61,7 @@ type (
 	}
 
 	FRSSubmitRequest struct {
+		ObjectKey    string `json:"object_key" form:"object_key" binding:"required"`
 		AcademicYear string `json:"academic_year" form:"academic_year" binding:"required"`
 		Term         string `json:"term" form:"term" binding:"required"`
 	}

@@ -12,7 +12,6 @@ type Course struct {
 	Description *string   `json:"description"`
 	Lab         string    `gorm:"type:text" json:"lab"`
 
-	Schedules                []Schedule        `gorm:"foreignKey:CourseID;references:ID" json:"schedules,omitempty"`
 	PathEdgesFrom            []PathEdge        `gorm:"foreignKey:FromCourseID;references:ID" json:"path_edges_from,omitempty"`        // ini yang from_course_id di tabel path_edge
 	PathEdgesTo              []PathEdge        `gorm:"foreignKey:ToCourseID;references:ID" json:"path_edges_to,omitempty"`            // ini yang to_course_id di tabel path_edge
 	PrerequisitesRequiredFor []Prerequisite    `gorm:"foreignKey:CourseID;references:ID" json:"prerequisites_required_for,omitempty"` // ini yang course_id di tabel prerequisite
