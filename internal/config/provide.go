@@ -60,8 +60,12 @@ func NewProvider(db *gorm.DB) *Provider {
 		return repository.NewFRSRepository(db), nil
 	})
 
-	// =========== SERVICES ===========
-	// User Service
+	// SkillTree Repository
+	do.Provide(injector, func(i *do.Injector) (repository.SkillTreeRepository, error) {
+		db := do.MustInvoke[*gorm.DB](i)
+		return repository.NewSkillTreeRepository(db), nil
+	})
+
 	do.Provide(injector, func(i *do.Injector) (service.UserService, error) {
 		userRepo := do.MustInvoke[repository.UserRepository](i)
 		jwtService := do.MustInvoke[service.JWTService](i)
@@ -75,6 +79,12 @@ func NewProvider(db *gorm.DB) *Provider {
 		frsRepo := do.MustInvoke[repository.FRSRepository](i)
 		storage := do.MustInvoke[storage.FileSystemStorage](i)
 		return service.NewFRSService(frsRepo, storage), nil
+	})
+
+	// SkillTree Service
+	do.Provide(injector, func(i *do.Injector) (service.SkillTreeService, error) {
+		stRepo := do.MustInvoke[repository.SkillTreeRepository](i)
+		return service.NewSkillTreeService(stRepo), nil
 	})
 
 	// =========== CONTROLLERS ===========
@@ -96,6 +106,13 @@ func NewProvider(db *gorm.DB) *Provider {
 	do.Provide(injector, func(i *do.Injector) (controller.FileController, error) {
 		storage := do.MustInvoke[storage.FileSystemStorage](i)
 		return controller.NewFileController(storage), nil
+	})
+
+	// SkillTree Controller
+	do.Provide(injector, func(i *do.Injector) (controller.SkillTreeController, error) {
+		stService := do.MustInvoke[service.SkillTreeService](i)
+		validator := do.MustInvoke[*validate.Validator](i)
+		return controller.NewSkillTreeController(stService, validator), nil
 	})
 
 	return &Provider{
@@ -138,6 +155,11 @@ func (p *Provider) InvokeUserService() service.UserService {
 // InvokeUserRepository returns the User repository instance
 func (p *Provider) InvokeUserRepository() repository.UserRepository {
 	return do.MustInvoke[repository.UserRepository](p.injector)
+}
+
+// InvokeSkillTreeController returns the SkillTree controller instance
+func (p *Provider) InvokeSkillTreeController() controller.SkillTreeController {
+	return do.MustInvoke[controller.SkillTreeController](p.injector)
 }
 
 // InvokeDatabase returns the database instance
