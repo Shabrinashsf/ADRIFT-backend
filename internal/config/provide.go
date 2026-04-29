@@ -74,7 +74,8 @@ func NewProvider(db *gorm.DB) *Provider {
 	do.Provide(injector, func(i *do.Injector) (service.FRSService, error) {
 		frsRepo := do.MustInvoke[repository.FRSRepository](i)
 		storage := do.MustInvoke[storage.FileSystemStorage](i)
-		return service.NewFRSService(frsRepo, storage), nil
+		db := do.MustInvoke[*gorm.DB](i)
+		return service.NewFRSService(frsRepo, storage, db), nil
 	})
 
 	// =========== CONTROLLERS ===========

@@ -38,7 +38,7 @@ const (
 
 type Schedule struct {
 	ID           uuid.UUID    `gorm:"type:uuid;primary_key;" json:"id"`
-	CourseID     uuid.UUID    `json:"course_id"`
+	CourseName   string       `gorm:"type:text" json:"course_name"`
 	LectureID    uuid.UUID    `json:"lecture_id"`
 	Class        string       `json:"class"` // A, B, C, D, E, dll
 	Day          Day          `json:"day"`
@@ -55,7 +55,6 @@ type Schedule struct {
 	FRSPlanItems []FRSPlanItem `gorm:"foreignKey:ScheduleID;references:ID" json:"frs_plan_items,omitempty"`
 
 	Lecture *Lecture `gorm:"foreignKey:LectureID;references:ID"`
-	Course  *Course  `gorm:"foreignKey:CourseID;references:ID"`
 }
 
 func (s *Schedule) TableName() string {

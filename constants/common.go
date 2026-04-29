@@ -4,8 +4,8 @@ const (
 	CTX_ID_PARAM      = "id"
 	CTX_KEY_ROLE_NAME = "role"
 
-	ENUM_ROLE_ADMIN = "admin"
-	ENUM_ROLE_USER  = "user"
+	ENUM_ROLE_ADMIN   = "ADMIN"
+	ENUM_ROLE_STUDENT = "STUDENT"
 
 	ENUM_RUN_PRODUCTION = "production"
 	ENUM_RUN_TESTING    = "testing"
