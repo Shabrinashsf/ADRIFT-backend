@@ -1,0 +1,192 @@
+[
+  {
+    "id": "258b6ac3-0149-4523-93ba-14f0511330ab",
+    "course_id": "333bd7e6-e3e8-4434-9466-0d32d850b092",
+    "require_id": "fe3445b9-4860-497c-a8b1-0afd281e674b"
+  },
+  {
+    "id": "7a7b79c5-9477-42d1-a523-c10ab41377dd",
+    "course_id": "cf0b3590-6dc7-464d-9413-b3fb6650e73b",
+    "require_id": "cba5c823-83d0-42ef-8d86-e6bcf523a9c0"
+  },
+  {
+    "id": "0dc2252b-eb2f-4e48-9e68-030fbb443606",
+    "course_id": "e1ec6cdb-3b01-4a84-9e74-9c10635cfb19",
+    "require_id": "cf0b3590-6dc7-464d-9413-b3fb6650e73b"
+  },
+  {
+    "id": "9cfb0d74-26b4-45c6-bd11-ed3e2737192d",
+    "course_id": "21ce49e9-c219-42d3-8885-fb7c12c8c6bf",
+    "require_id": "cba5c823-83d0-42ef-8d86-e6bcf523a9c0"
+  },
+  {
+    "id": "7fc06e1c-bfd0-4283-85b2-06f6ae37d489",
+    "course_id": "9682d390-d698-485f-bba9-7ca85018e342",
+    "require_id": "8431a195-c947-4a17-ad8d-0c2d661c46dd"
+  },
+  {
+    "id": "baf99f80-ec5e-4093-9d65-80a8a88378fd",
+    "course_id": "37bc61bc-9e69-4b20-9ab2-2b665a9dbbcc",
+    "require_id": "2704cf9f-4656-4572-b62c-30370e666e49"
+  },
+  {
+    "id": "49440194-829e-4402-8ba5-0124e4d5af47",
+    "course_id": "59552104-a783-4756-b70f-099a810d3f0c",
+    "require_id": "333bd7e6-e3e8-4434-9466-0d32d850b092"
+  },
+  {
+    "id": "b0277296-275f-4df9-aa8b-657d2e435349",
+    "course_id": "0ed5bb24-9fe1-4c0d-9def-06784d6bfbbd",
+    "require_id": "333bd7e6-e3e8-4434-9466-0d32d850b092"
+  },
+  {
+    "id": "450276f2-2e30-4200-b6d7-e2e872531b24",
+    "course_id": "f08895d4-1020-4ebe-8849-0e4993467468",
+    "require_id": "e1ec6cdb-3b01-4a84-9e74-9c10635cfb19"
+  },
+  {
+    "id": "4d6fc43a-ed88-42b3-ba25-259cc85eebef",
+    "course_id": "7d3c4bb1-60cc-425a-83d8-c4b0d9329b9c",
+    "require_id": "9682d390-d698-485f-bba9-7ca85018e342"
+  },
+  {
+    "id": "1ed0ee57-5862-4230-a0b9-ffac4d45d3a8",
+    "course_id": "b8269e39-c63b-449a-bb43-34c5068454e4",
+    "require_id": "9682d390-d698-485f-bba9-7ca85018e342"
+  },
+  {
+    "id": "c614c335-a6ad-47d5-9da6-0109eb7e631d",
+    "course_id": "0ca19ebc-cd6c-44e7-acd2-eb372ea6d096",
+    "require_id": "2704cf9f-4656-4572-b62c-30370e666e49"
+  },
+  {
+    "id": "ef1098be-2743-4854-b400-93a87cc96565",
+    "course_id": "ec694c3d-1e42-4e71-9edd-f20e8f624709",
+    "require_id": "333bd7e6-e3e8-4434-9466-0d32d850b092"
+  },
+  {
+    "id": "75d20b67-3e36-4470-8453-3a11079c2ca3",
+    "course_id": "080baac3-1257-4f74-b6ba-febef6b1f521",
+    "require_id": "0ed5bb24-9fe1-4c0d-9def-06784d6bfbbd"
+  },
+  {
+    "id": "96e9f1a4-b6f6-473f-8eb2-df3d1a7f81da",
+    "course_id": "bb9f5d97-8a68-4566-af1a-6edf68288fb3",
+    "require_id": "9682d390-d698-485f-bba9-7ca85018e342"
+  },
+  {
+    "id": "1ad6aec0-5d65-4c4b-9d34-f35ffaf6bef3",
+    "course_id": "b6d73ce9-8f76-46e3-bdb5-326d3dd33cfa",
+    "require_id": "080baac3-1257-4f74-b6ba-febef6b1f521"
+  },
+  {
+    "id": "a60de0d2-2900-4ce9-829c-53b271211670",
+    "course_id": "c74dad64-e510-4b09-880a-3340bdc306b6",
+    "require_id": "080baac3-1257-4f74-b6ba-febef6b1f521"
+  },
+  {
+    "id": "aea1c030-4245-4a9f-aac1-ca286fee4a36",
+    "course_id": "1e273e90-857c-4822-a505-4579426f5276",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "bb28807c-4f5b-47e9-ba1c-2abe93feea2e",
+    "course_id": "7f875d49-ba9d-45d6-a30c-dfe7fa7354e6",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "48becbe7-b433-4358-801b-61b9264edce9",
+    "course_id": "b0c1a8ff-e2eb-4509-bf13-f545ff2e8101",
+    "require_id": "080baac3-1257-4f74-b6ba-febef6b1f521"
+  },
+  {
+    "id": "b19ab689-2670-4228-a48a-9f4d515b5f64",
+    "course_id": "aae970e6-a08d-4074-adcc-137dc20b1eec",
+    "require_id": "080baac3-1257-4f74-b6ba-febef6b1f521"
+  },
+  {
+    "id": "dd31077d-4b9f-4372-94e0-9330b7a3ed7b",
+    "course_id": "28df3a84-f737-4be7-855b-5f68d50b9306",
+    "require_id": "0ca19ebc-cd6c-44e7-acd2-eb372ea6d096"
+  },
+  {
+    "id": "c1dab48c-5644-4bf1-b3a3-0207e1f38cb5",
+    "course_id": "19fd5846-3c47-43e0-8832-7aef3740496a",
+    "require_id": "cefe2051-300e-4801-8cbc-cc828dc59e49"
+  },
+  {
+    "id": "b679086f-078e-42fb-8083-e465f44f5891",
+    "course_id": "652ca898-6574-4ee6-a54e-4891ed498b57",
+    "require_id": "37bc61bc-9e69-4b20-9ab2-2b665a9dbbcc"
+  },
+  {
+    "id": "984bf030-f565-45d3-916a-41fb7d0c1ea5",
+    "course_id": "0c0da826-0055-48d6-ac13-64f2e2dca08e",
+    "require_id": "080baac3-1257-4f74-b6ba-febef6b1f521"
+  },
+  {
+    "id": "55bcb601-b249-4a97-9cc8-f5d51b442678",
+    "course_id": "017a0625-42c0-45e9-9e75-9970eda4db16",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "c67ec477-0748-4754-b82e-3c01b4a7fc99",
+    "course_id": "ddd577e2-9973-4a37-9600-3d1b0c7c2113",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "695189e5-d4fb-440d-b5aa-2ab9d7b20dab",
+    "course_id": "671bd301-4f4b-46d5-9833-8eae4f0b8ae3",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "20a05e55-b05a-4785-9401-f64b9de35533",
+    "course_id": "be6a7e6f-9185-43bb-a921-9498adbd5536",
+    "require_id": "f08895d4-1020-4ebe-8849-0e4993467468"
+  },
+  {
+    "id": "c960b92f-2e11-4e87-a779-e388431ca467",
+    "course_id": "63512e52-96f6-4130-8c19-11099ac434b3",
+    "require_id": "eac5c09e-3825-4e92-b949-44753cd61264"
+  },
+  {
+    "id": "51be4690-c9da-4d6a-aa1f-7d327f08ba2f",
+    "course_id": "5c81a9af-7777-448f-b9e4-4578045fe3d6",
+    "require_id": "eac5c09e-3825-4e92-b949-44753cd61264"
+  },
+  {
+    "id": "fe822c7a-a610-4480-a993-3993d565703c",
+    "course_id": "8fc46cc0-63c8-4d46-a860-6e38e9054d7e",
+    "require_id": "99ba8793-62cf-49fa-866d-0272a1125d68"
+  },
+  {
+    "id": "38eb5e64-aa2d-4b1b-a1ac-65fd9900e250",
+    "course_id": "c08c0147-962f-497d-87b4-d8f2b5886002",
+    "require_id": "99ba8793-62cf-49fa-866d-0272a1125d68"
+  },
+  {
+    "id": "e0780e4f-d0fa-4727-a6ad-a53c15363ef7",
+    "course_id": "816eca8f-6acc-48b1-9baa-65f4239b8956",
+    "require_id": "1ad56c8d-53af-4ea4-82db-af42279dcab6"
+  },
+  {
+    "id": "99d303ae-afde-401d-89e2-b919c10c3de4",
+    "course_id": "7cbca85c-682b-4910-b087-77c0b6009e3d",
+    "require_id": "ec694c3d-1e42-4e71-9edd-f20e8f624709"
+  },
+  {
+    "id": "8af09ba9-e77d-4d7a-8644-c897455c2cd4",
+    "course_id": "0a0c4f6b-6390-4e46-b51c-33a3cd991eb9",
+    "require_id": "f09ae4a1-a064-40f9-92cf-a977c52b4892"
+  },
+  {
+    "id": "56f3f7ca-d68d-4723-9cbc-d803405d6daa",
+    "course_id": "478b9134-7221-43a9-97d3-e8cc8745415e",
+    "require_id": "eac5c09e-3825-4e92-b949-44753cd61264"
+  },
+  {
+    "id": "fcd864f2-6e1f-401f-a2a9-5a4a5b0d740e",
+    "course_id": "f7c8d5d8-0a7d-4154-b34d-b5023d02ddf9",
+    "require_id": "bb9f5d97-8a68-4566-af1a-6edf68288fb3"
+  }
+]

@@ -11,5 +11,13 @@ func Seeder(db *gorm.DB) error {
 		return err
 	}
 
+	if err := seeds.ListCourseSeeder(db); err != nil {
+		return err
+	}
+
+	if err := seeds.ListPrerequisiteSeeder(db); err != nil {
+		return err
+	}
+
 	return nil
 }
