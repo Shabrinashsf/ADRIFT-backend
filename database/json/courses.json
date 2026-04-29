@@ -1,0 +1,893 @@
+[
+  {
+    "id": "2704cf9f-4656-4572-b62c-30370e666e49",
+    "code": "EF234104",
+    "name": "Sistem Basis Data",
+    "credit": 4,
+    "semester": 1,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "fe3445b9-4860-497c-a8b1-0afd281e674b",
+    "code": "EF234101",
+    "name": "Dasar Pemrograman",
+    "credit": 4,
+    "semester": 1,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "cba5c823-83d0-42ef-8d86-e6bcf523a9c0",
+    "code": "EF234102",
+    "name": "Sistem Digital",
+    "credit": 3,
+    "semester": 1,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "5103548d-dc79-48a4-a0d1-9e226a97a1a7",
+    "code": "EF234103",
+    "name": "Aljabar Linear",
+    "credit": 3,
+    "semester": 1,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "8431a195-c947-4a17-ad8d-0c2d661c46dd",
+    "code": "SM234101",
+    "name": "Kalkulus 1",
+    "credit": 3,
+    "semester": 1,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "05860b82-9151-44a7-ba5f-5d18da05a575",
+    "code": "EE234101",
+    "name": "Pengantar Teknologi Elektro dan Informatika Cerdas",
+    "credit": 2,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "333bd7e6-e3e8-4434-9466-0d32d850b092",
+    "code": "EF234201",
+    "name": "Struktur Data",
+    "credit": 4,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "cf0b3590-6dc7-464d-9413-b3fb6650e73b",
+    "code": "EF234203",
+    "name": "Organisasi Komputer",
+    "credit": 3,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "e1ec6cdb-3b01-4a84-9e74-9c10635cfb19",
+    "code": "EF234202",
+    "name": "Sistem Operasi",
+    "credit": 4,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "21ce49e9-c219-42d3-8885-fb7c12c8c6bf",
+    "code": "EF234204",
+    "name": "Komputasi Numerik",
+    "credit": 3,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "9682d390-d698-485f-bba9-7ca85018e342",
+    "code": "SM234201",
+    "name": "Kalkulus 2",
+    "credit": 3,
+    "semester": 2,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "cefe2051-300e-4801-8cbc-cc828dc59e49",
+    "code": "EF234307",
+    "name": "Konsep Pengembangan Perangkat Lunak",
+    "credit": 2,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "37bc61bc-9e69-4b20-9ab2-2b665a9dbbcc",
+    "code": "EF234301",
+    "name": "Pemrograman Web",
+    "credit": 3,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "59552104-a783-4756-b70f-099a810d3f0c",
+    "code": "EF234302",
+    "name": "Pemrograman Berorientasi Objek",
+    "credit": 3,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "0ed5bb24-9fe1-4c0d-9def-06784d6bfbbd",
+    "code": "EK234201",
+    "name": "Konsep Kecerdasan Artificial",
+    "credit": 3,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "f08895d4-1020-4ebe-8849-0e4993467468",
+    "code": "EF234303",
+    "name": "Jaringan Komputer",
+    "credit": 4,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "7d3c4bb1-60cc-425a-83d8-c4b0d9329b9c",
+    "code": "EF234305",
+    "name": "Matematika Diskrit",
+    "credit": 3,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "b8269e39-c63b-449a-bb43-34c5068454e4",
+    "code": "EF234304",
+    "name": "Teori Graf",
+    "credit": 3,
+    "semester": 3,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "99ba8793-62cf-49fa-866d-0272a1125d68",
+    "code": "ER234301",
+    "name": "Perancangan Perangkat Lunak",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "0ca19ebc-cd6c-44e7-acd2-eb372ea6d096",
+    "code": "EF234404",
+    "name": "Manajemen Basis Data",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "ec694c3d-1e42-4e71-9edd-f20e8f624709",
+    "code": "EF234405",
+    "name": "Perancangan dan Analisis Algoritma",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "080baac3-1257-4f74-b6ba-febef6b1f521",
+    "code": "EF234406",
+    "name": "Pembelajaran Mesin",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "f09ae4a1-a064-40f9-92cf-a977c52b4892",
+    "code": "EF234401",
+    "name": "Pemrograman Jaringan",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "d9487fd1-9355-4ca0-9a65-027b37e4c71b",
+    "code": "EF234403",
+    "name": "Otomata",
+    "credit": 2,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "bb9f5d97-8a68-4566-af1a-6edf68288fb3",
+    "code": "EF234402",
+    "name": "Probabilitas dan Statistika",
+    "credit": 3,
+    "semester": 4,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "328d0530-0bf4-480b-a2ba-a9cec4081642",
+    "code": "EF234515",
+    "name": "Rekayasa Kebutuhan",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "26122a90-94bb-4aa5-a0bf-ba89edfe0409",
+    "code": "EF234505",
+    "name": "Rekayasa Sistem Berbasis Pengetahuan",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "274aad72-9a68-4b3b-b6d3-de6cd88b0ccf",
+    "code": "EF234513",
+    "name": "Sistem Enterprise",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "78586bcb-88a4-461b-a23a-b77a9016c279",
+    "code": "EF234514",
+    "name": "Tata Kelola Teknologi Informasi",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "1ad56c8d-53af-4ea4-82db-af42279dcab6",
+    "code": "EF234504",
+    "name": "Grafika Komputer",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "1d5192f9-6b0a-4325-ae9a-0a170533c1df",
+    "code": "EF234511",
+    "name": "Teknik Pengembangan Game",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "110dc5c3-28d2-4148-b1ec-7ce28ca72089",
+    "code": "EF234501",
+    "name": "Pemrograman Berbasis Perangkat Kerja",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "b6d73ce9-8f76-46e3-bdb5-326d3dd33cfa",
+    "code": "EF234518",
+    "name": "Data Mining",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "c74dad64-e510-4b09-880a-3340bdc306b6",
+    "code": "EF234517",
+    "name": "Pengolahan Citra dan Visi Komputer",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "2b4a7787-4e0b-4379-b737-800dfe4f8f2e",
+    "code": "EF234502",
+    "name": "Keamanan Informasi",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "1e273e90-857c-4822-a505-4579426f5276",
+    "code": "EF234507",
+    "name": "Jaringan Nirkabel",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "7f875d49-ba9d-45d6-a30c-dfe7fa7354e6",
+    "code": "EF234506",
+    "name": "Teknologi Antar Jaringan",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "a5f34187-7aef-4cc4-8112-6c55b335f2e2",
+    "code": "EF234510",
+    "name": "Riset Operasi",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "4da7fe66-9900-4fda-85ff-0b521a4a7cc4",
+    "code": "EF234512",
+    "name": "Manajemen Proyek Perangkat Lunak",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "eac5c09e-3825-4e92-b949-44753cd61264",
+    "code": "EF234503",
+    "name": "Pemodelan dan Simulasi",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "58c50a69-4156-468d-99f3-7d629cf7d561",
+    "code": "EF234509",
+    "name": "Pemrograman Kompetitif",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "5f6fd04b-85c4-42c1-b3a2-469f665fb9ab",
+    "code": "EF234508",
+    "name": "Sistem Terdistribusi",
+    "credit": 3,
+    "semester": 5,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "3cce5d62-79da-4f7a-bc76-22e24af903c4",
+    "code": "EF234605",
+    "name": "Capstone Project",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "de34f062-c712-4860-8833-290ad2e96969",
+    "code": "EF234603",
+    "name": "Kerja Praktik",
+    "credit": 4,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "b0c1a8ff-e2eb-4509-bf13-f545ff2e8101",
+    "code": "ER234402",
+    "name": "Konstruksi Perangkat Lunak",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "aae970e6-a08d-4074-adcc-137dc20b1eec",
+    "code": "ER234503",
+    "name": "Kualitas Perangkat Lunak",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "28df3a84-f737-4be7-855b-5f68d50b9306",
+    "code": "EF234615",
+    "name": "Audit Sistem",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "21d5d605-7468-455a-9399-bf3fcf77b317",
+    "code": "EF234616",
+    "name": "Basis Data Terdistribusi",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "53e94c05-5926-4b70-9c6f-764fce5999fa",
+    "code": "EF234617",
+    "name": "Sitem Informasi Geografis",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "19fd5846-3c47-43e0-8832-7aef3740496a",
+    "code": "EF234602",
+    "name": "Interaksi Manusia dan Komputer",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "9e1fa8b5-5d00-4848-a7e9-97318fb560d7",
+    "code": "EF234612",
+    "name": "Animasi Komputer dan Pemodelan 3D",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "56cf8f7c-3206-4fed-8ebf-680a7150f2af",
+    "code": "EF234613",
+    "name": "Game Edukasi dan Simulasi",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "e6e485f3-0e1c-47b3-89a9-adffb24293ce",
+    "code": "EF234614",
+    "name": "Desain Pengalaman Pengguna",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "767866a3-91d5-4fbd-9923-8b3b6746ce91",
+    "code": "EF234618",
+    "name": "Game Engine",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "652ca898-6574-4ee6-a54e-4891ed498b57",
+    "code": "EF234608",
+    "name": "Pemrograman Berbasis Antarmuka",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "547e138b-5d1c-437f-8a60-28c72fc27770",
+    "code": "EF234601",
+    "name": "Pemrograman Perangkat Bergerak",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "0c0da826-0055-48d6-ac13-64f2e2dca08e",
+    "code": "EF234619",
+    "name": "Deep Learning",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "017a0625-42c0-45e9-9e75-9970eda4db16",
+    "code": "EF234604",
+    "name": "Komputasi Bergerak",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "ddd577e2-9973-4a37-9600-3d1b0c7c2113",
+    "code": "EF234625",
+    "name": "Komputasi Pervasif dan Jaringan Sensor",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "671bd301-4f4b-46d5-9833-8eae4f0b8ae3",
+    "code": "EF234606",
+    "name": "Keamanan Jaringan",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "be6a7e6f-9185-43bb-a921-9498adbd5536",
+    "code": "EF234607",
+    "name": "Keamanan Apliaksi",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "63512e52-96f6-4130-8c19-11099ac434b3",
+    "code": "EF234609",
+    "name": "Simulasi Sistem Dinamis",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "5c81a9af-7777-448f-b9e4-4578045fe3d6",
+    "code": "EF234610",
+    "name": "Simulasi Berbasis Agen",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "589c102c-0bde-487e-8143-02bb27761c45",
+    "code": "EK234501",
+    "name": "Text Mining",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "f4048223-c92f-4e7e-820f-52c7a924fbe3",
+    "code": "EF234611",
+    "name": "Teknik Peramalan",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "e83edeae-39d6-4f19-a6c8-5fbefb4bb906",
+    "code": "UG234901-6",
+    "name": "Agama",
+    "credit": 3,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "09c24043-c0d9-4ab8-aedc-f71a4579efb9",
+    "code": "UG234914",
+    "name": "Bahasa Inggris",
+    "credit": 2,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "57bc70ea-50af-4018-8f66-a09e797caaa5",
+    "code": "UG234913",
+    "name": "Kewarganegaraan",
+    "credit": 2,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "02b84bcb-1e57-4a36-8a8d-dd3fd4a5222d",
+    "code": "UG234915",
+    "name": "Kewirausahaan",
+    "credit": 2,
+    "semester": 6,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "992b446f-4b8c-4b18-9d87-30009c7adde8",
+    "code": "XXXXXXXX",
+    "name": "Enrichment Course",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "be2d44ae-469b-414a-9827-765c7b955958",
+    "code": "EF234714",
+    "name": "Topik Khusus Algoritma dan Pemrograman",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "220f7539-51ad-44b9-a380-9a17d7587c71",
+    "code": "EF234715",
+    "name": "Topik Khusus Arsitektur dan Jaringan Komputer",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "b6c5bfbd-95fc-4375-988a-4cbfd7386901",
+    "code": "EF234716",
+    "name": "Topik Khusus Grafika, Interaksi dan Game",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "c7ac3032-47af-4a5d-9ed9-dc96dd9641e5",
+    "code": "EF234717",
+    "name": "Topik Khusus Komputasi Berbasis Jaringan",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "0b62957e-e3b7-4162-bf15-3efe6906fcac",
+    "code": "EF234718",
+    "name": "Topik Khusus Komputasi Cerdas dan Visi",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "e2a90d9f-3292-49eb-b6c6-2878791fd35c",
+    "code": "EF234719",
+    "name": "Topik Khusus Manajemen Cerdas Informasi",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "d89fb6e6-82d2-42a1-8830-a9958fdcc007",
+    "code": "EF234720",
+    "name": "Topik Khusus Pemodelan dan Komputasi Terapan",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "77787cb8-3f4f-4891-8acd-a1164cf9a5d4",
+    "code": "EF234721",
+    "name": "Topik Khusus Rekayasa Perangkat Lunak",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": "wajib"
+  },
+  {
+    "id": "74152209-cd8a-4f78-a6db-e35125c7c612",
+    "code": "EF234701",
+    "name": "Etika Profesi",
+    "credit": 2,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "1f657982-5d71-4fa6-bf8e-f6081d04d576",
+    "code": "EF234702",
+    "name": "Proposal Tugas Akhir",
+    "credit": 2,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "8fc46cc0-63c8-4d46-a860-6e38e9054d7e",
+    "code": "ER234505",
+    "name": "Evolusi Perangkat Lunak",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "c08c0147-962f-497d-87b4-d8f2b5886002",
+    "code": "ER234403",
+    "name": "Arsitektur Perangkat Lunak",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "d8cb6a51-153c-4621-abae-75e3179c1f49",
+    "code": "EF234712",
+    "name": "Big Data",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "55a786d9-1bbe-49fe-afa5-d53248f2a44f",
+    "code": "EF234713",
+    "name": "Komputasi Kuantum",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "816eca8f-6acc-48b1-9baa-65f4239b8956",
+    "code": "EF234711",
+    "name": "Realitas X",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "4853d91d-026b-42f4-8b6e-dd0d1b32bbeb",
+    "code": "EF234710",
+    "name": "Game Cerdas",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "7cbca85c-682b-4910-b087-77c0b6009e3d",
+    "code": "EF234706",
+    "name": "Pemrograman Pengolahan Sinyal",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "0a0c4f6b-6390-4e46-b51c-33a3cd991eb9",
+    "code": "EF234705",
+    "name": "Forensik Digital",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "577364f0-71a2-4f8a-b23c-cd3d53f42b0c",
+    "code": "EF234703",
+    "name": "Teknologi IOT",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "478b9134-7221-43a9-97d3-e8cc8745415e",
+    "code": "EF234709",
+    "name": "Simulasi Berorientasi Objek",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "f7c8d5d8-0a7d-4154-b34d-b5023d02ddf9",
+    "code": "EF234708",
+    "name": "Analisis Data Multivariat",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "55674fa8-9273-4f22-a82a-bd36175e2bf2",
+    "code": "UG234912",
+    "name": "Bahasa Indonesia",
+    "credit": 2,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "923cde34-7107-43ee-94c9-ba8d53514397",
+    "code": "UG234911",
+    "name": "Pancasila",
+    "credit": 2,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "6407fbdc-5079-49f0-9bc9-bfa5ae9e3483",
+    "code": "UG234916",
+    "name": "Aplikasi Teknologi dan Transformasi Digital",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": false,
+    "description": ""
+  },
+  {
+    "id": "08dac5b1-615b-420e-b659-3d88272eda70",
+    "code": "EF234704",
+    "name": "Komputasi Awan",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "a7ef3814-3af0-4f31-8b0b-c4813db55b78",
+    "code": "EF234722",
+    "name": "Magang",
+    "credit": 6,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "4e8007f5-71d9-4086-a039-87d049ed9bf2",
+    "code": "EF234707",
+    "name": "Pemrograman Data Sains Terapan",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "9c0d5a5f-b3f3-4ce3-ac4c-70cac43410a9",
+    "code": "EF234726",
+    "name": "Robotika",
+    "credit": 3,
+    "semester": 7,
+    "is_elective": true,
+    "description": ""
+  },
+  {
+    "id": "009c954b-9aba-4ced-9e69-4dece0a9ebf4",
+    "code": "EF234801",
+    "name": "Tugas Akhir",
+    "credit": 5,
+    "semester": 8,
+    "is_elective": false,
+    "description": ""
+  }
+]

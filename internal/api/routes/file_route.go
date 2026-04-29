@@ -13,4 +13,9 @@ func File(route *gin.Engine, fileController controller.FileController, jwtServic
 	{
 		routes.GET("/*path", fileController.ServeUpload)
 	}
+
+	admin := route.Group("api/admin/assets").Use(middleware.Authenticate(jwtService), middleware.OnlyAllow("ADMIN"))
+	{
+		admin.POST("/frs/upload", fileController.UploadFRSTempFile)
+	}
 }

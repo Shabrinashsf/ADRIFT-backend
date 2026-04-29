@@ -54,6 +54,12 @@ func NewProvider(db *gorm.DB) *Provider {
 		return repository.NewUserController(db), nil
 	})
 
+	// FRS Repository
+	do.Provide(injector, func(i *do.Injector) (repository.FRSRepository, error) {
+		db := do.MustInvoke[*gorm.DB](i)
+		return repository.NewFRSRepository(db), nil
+	})
+
 	// =========== SERVICES ===========
 	// User Service
 	do.Provide(injector, func(i *do.Injector) (service.UserService, error) {
@@ -62,6 +68,13 @@ func NewProvider(db *gorm.DB) *Provider {
 		mailerService := do.MustInvoke[mailer.Mailer](i)
 		db := do.MustInvoke[*gorm.DB](i)
 		return service.NewUserService(userRepo, jwtService, mailerService, db), nil
+	})
+
+	// FRS Service
+	do.Provide(injector, func(i *do.Injector) (service.FRSService, error) {
+		frsRepo := do.MustInvoke[repository.FRSRepository](i)
+		storage := do.MustInvoke[storage.FileSystemStorage](i)
+		return service.NewFRSService(frsRepo, storage), nil
 	})
 
 	// =========== CONTROLLERS ===========
@@ -73,8 +86,16 @@ func NewProvider(db *gorm.DB) *Provider {
 		return controller.NewUserController(userService, validator, storage), nil
 	})
 
+	// FRS Controller
+	do.Provide(injector, func(i *do.Injector) (controller.FRSController, error) {
+		frsService := do.MustInvoke[service.FRSService](i)
+		validator := do.MustInvoke[*validate.Validator](i)
+		return controller.NewFRSController(frsService, validator), nil
+	})
+
 	do.Provide(injector, func(i *do.Injector) (controller.FileController, error) {
-		return controller.NewFileController(), nil
+		storage := do.MustInvoke[storage.FileSystemStorage](i)
+		return controller.NewFileController(storage), nil
 	})
 
 	return &Provider{
@@ -97,6 +118,11 @@ func (p *Provider) InvokeMailerService() mailer.Mailer {
 // InvokeUserController returns the User controller instance
 func (p *Provider) InvokeUserController() controller.UserController {
 	return do.MustInvoke[controller.UserController](p.injector)
+}
+
+// InvokeFRSController returns the FRS controller instance
+func (p *Provider) InvokeFRSController() controller.FRSController {
+	return do.MustInvoke[controller.FRSController](p.injector)
 }
 
 // InvokeFileController returns the File controller instance
