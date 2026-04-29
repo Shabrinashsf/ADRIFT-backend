@@ -6,14 +6,13 @@ import (
 
 // use for pagination
 type Meta struct {
-	Take      int    `json:"take"`
-	Page      int    `json:"page"`
-	TotalData int    `json:"total_data"`
-	TotalPage int    `json:"total_page"`
-	Sort      string `json:"sort"`
-	SortBy    string `json:"sort_by"`
-	Filter    string `json:"filter,omitempty"`
-	FilterBy  string `json:"filter_by,omitempty"`
+	Take      int               `json:"take"`
+	Page      int               `json:"page"`
+	TotalData int               `json:"total_data"`
+	TotalPage int               `json:"total_page"`
+	Sort      string            `json:"sort"`
+	SortBy    string            `json:"sort_by"`
+	Filters   map[string]string `json:"filters,omitempty"`
 }
 
 // New creates and initializes a Meta object with default pagination settings.
@@ -21,37 +20,35 @@ type Meta struct {
 // - Take: 10 (number of items per page)
 // - Page: 0 (starting page)
 // - Sort: "asc" (ascending order)
-// - SortBy: "created_by" (column used for sorting)
+// - SortBy: "id" (column used for sorting)
 // Additional options can be applied to customize the Meta object.
-func New(ctx *gin.Context) Meta {
+//
+// filterKeys specifies which query parameters are accepted as filters.
+// Only keys listed in filterKeys will be parsed from the query string into meta.Filters.
+func New(ctx *gin.Context, filterKeys ...string) Meta {
 	meta := Meta{
-		Take:   10,
-		Page:   0,
-		Sort:   "asc",
-		SortBy: "id",
+		Take:    10,
+		Page:    0,
+		Sort:    "asc",
+		SortBy:  "id",
+		Filters: make(map[string]string),
 	}
 
 	meta.Page = ToInt(ctx.Query("page"))
 	meta.Take = DefaultTake(ToInt(ctx.Query("take")))
-	sort := ctx.Query("sort")
-	sortby := ctx.Query("sort_by")
-	filter := ctx.Query("filter")
-	filterby := ctx.Query("filter_by")
 
-	if sort != "" {
+	if sort := ctx.Query("sort"); sort != "" {
 		meta.Sort = sort
 	}
 
-	if sortby != "" {
+	if sortby := ctx.Query("sort_by"); sortby != "" {
 		meta.SortBy = sortby
 	}
 
-	if filter != "" {
-		meta.Filter = filter
-	}
-
-	if filterby != "" {
-		meta.FilterBy = filterby
+	for _, key := range filterKeys {
+		if val := ctx.Query(key); val != "" {
+			meta.Filters[key] = val
+		}
 	}
 
 	return meta
