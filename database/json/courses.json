@@ -6,7 +6,8 @@
     "credit": 4,
     "semester": 1,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "fe3445b9-4860-497c-a8b1-0afd281e674b",
@@ -15,7 +16,8 @@
     "credit": 4,
     "semester": 1,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "cba5c823-83d0-42ef-8d86-e6bcf523a9c0",
@@ -24,7 +26,8 @@
     "credit": 3,
     "semester": 1,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "5103548d-dc79-48a4-a0d1-9e226a97a1a7",
@@ -33,7 +36,8 @@
     "credit": 3,
     "semester": 1,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "8431a195-c947-4a17-ad8d-0c2d661c46dd",
@@ -42,7 +46,8 @@
     "credit": 3,
     "semester": 1,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "05860b82-9151-44a7-ba5f-5d18da05a575",
@@ -51,7 +56,8 @@
     "credit": 2,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "333bd7e6-e3e8-4434-9466-0d32d850b092",
@@ -60,7 +66,8 @@
     "credit": 4,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "cf0b3590-6dc7-464d-9413-b3fb6650e73b",
@@ -69,7 +76,8 @@
     "credit": 3,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "e1ec6cdb-3b01-4a84-9e74-9c10635cfb19",
@@ -78,7 +86,8 @@
     "credit": 4,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "21ce49e9-c219-42d3-8885-fb7c12c8c6bf",
@@ -87,7 +96,8 @@
     "credit": 3,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "9682d390-d698-485f-bba9-7ca85018e342",
@@ -96,7 +106,8 @@
     "credit": 3,
     "semester": 2,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "cefe2051-300e-4801-8cbc-cc828dc59e49",
@@ -105,7 +116,8 @@
     "credit": 2,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "37bc61bc-9e69-4b20-9ab2-2b665a9dbbcc",
@@ -114,7 +126,8 @@
     "credit": 3,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "59552104-a783-4756-b70f-099a810d3f0c",
@@ -123,7 +136,8 @@
     "credit": 3,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "0ed5bb24-9fe1-4c0d-9def-06784d6bfbbd",
@@ -132,7 +146,8 @@
     "credit": 3,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "f08895d4-1020-4ebe-8849-0e4993467468",
@@ -141,7 +156,8 @@
     "credit": 4,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "7d3c4bb1-60cc-425a-83d8-c4b0d9329b9c",
@@ -150,7 +166,8 @@
     "credit": 3,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "b8269e39-c63b-449a-bb43-34c5068454e4",
@@ -159,7 +176,8 @@
     "credit": 3,
     "semester": 3,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "99ba8793-62cf-49fa-866d-0272a1125d68",
@@ -168,7 +186,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "0ca19ebc-cd6c-44e7-acd2-eb372ea6d096",
@@ -177,7 +196,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "ec694c3d-1e42-4e71-9edd-f20e8f624709",
@@ -186,7 +206,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "080baac3-1257-4f74-b6ba-febef6b1f521",
@@ -195,7 +216,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "f09ae4a1-a064-40f9-92cf-a977c52b4892",
@@ -204,7 +226,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "d9487fd1-9355-4ca0-9a65-027b37e4c71b",
@@ -213,7 +236,8 @@
     "credit": 2,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "bb9f5d97-8a68-4566-af1a-6edf68288fb3",
@@ -222,7 +246,8 @@
     "credit": 3,
     "semester": 4,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "328d0530-0bf4-480b-a2ba-a9cec4081642",
@@ -231,7 +256,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "26122a90-94bb-4aa5-a0bf-ba89edfe0409",
@@ -240,7 +266,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "274aad72-9a68-4b3b-b6d3-de6cd88b0ccf",
@@ -249,7 +276,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "78586bcb-88a4-461b-a23a-b77a9016c279",
@@ -258,7 +286,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "1ad56c8d-53af-4ea4-82db-af42279dcab6",
@@ -267,7 +296,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "1d5192f9-6b0a-4325-ae9a-0a170533c1df",
@@ -276,7 +306,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "110dc5c3-28d2-4148-b1ec-7ce28ca72089",
@@ -285,7 +316,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "b6d73ce9-8f76-46e3-bdb5-326d3dd33cfa",
@@ -294,7 +326,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "c74dad64-e510-4b09-880a-3340bdc306b6",
@@ -303,7 +336,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "2b4a7787-4e0b-4379-b737-800dfe4f8f2e",
@@ -312,7 +346,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "1e273e90-857c-4822-a505-4579426f5276",
@@ -321,7 +356,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "7f875d49-ba9d-45d6-a30c-dfe7fa7354e6",
@@ -330,7 +366,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC + NETICS"
   },
   {
     "id": "a5f34187-7aef-4cc4-8112-6c55b335f2e2",
@@ -339,7 +376,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "4da7fe66-9900-4fda-85ff-0b521a4a7cc4",
@@ -348,7 +386,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "eac5c09e-3825-4e92-b949-44753cd61264",
@@ -357,7 +396,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "58c50a69-4156-468d-99f3-7d629cf7d561",
@@ -366,7 +406,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "5f6fd04b-85c4-42c1-b3a2-469f665fb9ab",
@@ -375,7 +416,8 @@
     "credit": 3,
     "semester": 5,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC"
   },
   {
     "id": "3cce5d62-79da-4f7a-bc76-22e24af903c4",
@@ -384,7 +426,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "de34f062-c712-4860-8833-290ad2e96969",
@@ -393,7 +436,8 @@
     "credit": 4,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "b0c1a8ff-e2eb-4509-bf13-f545ff2e8101",
@@ -402,7 +446,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "aae970e6-a08d-4074-adcc-137dc20b1eec",
@@ -411,7 +456,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "28df3a84-f737-4be7-855b-5f68d50b9306",
@@ -420,7 +466,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "21d5d605-7468-455a-9399-bf3fcf77b317",
@@ -429,7 +476,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "53e94c05-5926-4b70-9c6f-764fce5999fa",
@@ -438,7 +486,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "19fd5846-3c47-43e0-8832-7aef3740496a",
@@ -447,7 +496,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "9e1fa8b5-5d00-4848-a7e9-97318fb560d7",
@@ -456,7 +506,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "56cf8f7c-3206-4fed-8ebf-680a7150f2af",
@@ -465,7 +516,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "e6e485f3-0e1c-47b3-89a9-adffb24293ce",
@@ -474,7 +526,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "767866a3-91d5-4fbd-9923-8b3b6746ce91",
@@ -483,7 +536,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "652ca898-6574-4ee6-a54e-4891ed498b57",
@@ -492,7 +546,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "547e138b-5d1c-437f-8a60-28c72fc27770",
@@ -501,7 +556,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "0c0da826-0055-48d6-ac13-64f2e2dca08e",
@@ -510,7 +566,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "017a0625-42c0-45e9-9e75-9970eda4db16",
@@ -519,7 +576,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC"
   },
   {
     "id": "ddd577e2-9973-4a37-9600-3d1b0c7c2113",
@@ -528,7 +586,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC"
   },
   {
     "id": "671bd301-4f4b-46d5-9833-8eae4f0b8ae3",
@@ -537,7 +596,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NETICS"
   },
   {
     "id": "be6a7e6f-9185-43bb-a921-9498adbd5536",
@@ -546,7 +606,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NETICS"
   },
   {
     "id": "63512e52-96f6-4130-8c19-11099ac434b3",
@@ -555,7 +616,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "5c81a9af-7777-448f-b9e4-4578045fe3d6",
@@ -564,7 +626,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "589c102c-0bde-487e-8143-02bb27761c45",
@@ -573,7 +636,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "f4048223-c92f-4e7e-820f-52c7a924fbe3",
@@ -582,7 +646,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "e83edeae-39d6-4f19-a6c8-5fbefb4bb906",
@@ -591,7 +656,8 @@
     "credit": 3,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "09c24043-c0d9-4ab8-aedc-f71a4579efb9",
@@ -600,7 +666,8 @@
     "credit": 2,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "57bc70ea-50af-4018-8f66-a09e797caaa5",
@@ -609,7 +676,8 @@
     "credit": 2,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "02b84bcb-1e57-4a36-8a8d-dd3fd4a5222d",
@@ -618,7 +686,8 @@
     "credit": 2,
     "semester": 6,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "992b446f-4b8c-4b18-9d87-30009c7adde8",
@@ -627,7 +696,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "be2d44ae-469b-414a-9827-765c7b955958",
@@ -636,7 +706,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "ALPRO"
   },
   {
     "id": "220f7539-51ad-44b9-a380-9a17d7587c71",
@@ -645,7 +716,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "NETICS"
   },
   {
     "id": "b6c5bfbd-95fc-4375-988a-4cbfd7386901",
@@ -654,7 +726,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "GIGA"
   },
   {
     "id": "c7ac3032-47af-4a5d-9ed9-dc96dd9641e5",
@@ -663,7 +736,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "NCC"
   },
   {
     "id": "0b62957e-e3b7-4162-bf15-3efe6906fcac",
@@ -672,7 +746,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "KCV"
   },
   {
     "id": "e2a90d9f-3292-49eb-b6c6-2878791fd35c",
@@ -681,7 +756,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "MCI"
   },
   {
     "id": "d89fb6e6-82d2-42a1-8830-a9958fdcc007",
@@ -690,7 +766,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "PKT"
   },
   {
     "id": "77787cb8-3f4f-4891-8acd-a1164cf9a5d4",
@@ -699,7 +776,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": "wajib"
+    "description": "wajib",
+    "lab": "RPL"
   },
   {
     "id": "74152209-cd8a-4f78-a6db-e35125c7c612",
@@ -708,7 +786,8 @@
     "credit": 2,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "1f657982-5d71-4fa6-bf8e-f6081d04d576",
@@ -717,7 +796,8 @@
     "credit": 2,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "8fc46cc0-63c8-4d46-a860-6e38e9054d7e",
@@ -726,7 +806,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "c08c0147-962f-497d-87b4-d8f2b5886002",
@@ -735,7 +816,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "RPL"
   },
   {
     "id": "d8cb6a51-153c-4621-abae-75e3179c1f49",
@@ -744,7 +826,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "55a786d9-1bbe-49fe-afa5-d53248f2a44f",
@@ -753,7 +836,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "MCI"
   },
   {
     "id": "816eca8f-6acc-48b1-9baa-65f4239b8956",
@@ -762,7 +846,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "4853d91d-026b-42f4-8b6e-dd0d1b32bbeb",
@@ -771,7 +856,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "GIGA"
   },
   {
     "id": "7cbca85c-682b-4910-b087-77c0b6009e3d",
@@ -780,7 +866,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "0a0c4f6b-6390-4e46-b51c-33a3cd991eb9",
@@ -789,7 +876,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC"
   },
   {
     "id": "577364f0-71a2-4f8a-b23c-cd3d53f42b0c",
@@ -798,7 +886,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NETICS"
   },
   {
     "id": "478b9134-7221-43a9-97d3-e8cc8745415e",
@@ -807,7 +896,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "f7c8d5d8-0a7d-4154-b34d-b5023d02ddf9",
@@ -816,7 +906,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "PKT"
   },
   {
     "id": "55674fa8-9273-4f22-a82a-bd36175e2bf2",
@@ -825,7 +916,8 @@
     "credit": 2,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "923cde34-7107-43ee-94c9-ba8d53514397",
@@ -834,7 +926,8 @@
     "credit": 2,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "6407fbdc-5079-49f0-9bc9-bfa5ae9e3483",
@@ -843,7 +936,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "UPMB"
   },
   {
     "id": "08dac5b1-615b-420e-b659-3d88272eda70",
@@ -852,7 +946,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "NCC"
   },
   {
     "id": "a7ef3814-3af0-4f31-8b0b-c4813db55b78",
@@ -861,7 +956,8 @@
     "credit": 6,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   },
   {
     "id": "4e8007f5-71d9-4086-a039-87d049ed9bf2",
@@ -870,7 +966,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "ALPRO"
   },
   {
     "id": "9c0d5a5f-b3f3-4ce3-ac4c-70cac43410a9",
@@ -879,7 +976,8 @@
     "credit": 3,
     "semester": 7,
     "is_elective": true,
-    "description": ""
+    "description": null,
+    "lab": "KCV"
   },
   {
     "id": "009c954b-9aba-4ced-9e69-4dece0a9ebf4",
@@ -888,6 +986,7 @@
     "credit": 5,
     "semester": 8,
     "is_elective": false,
-    "description": ""
+    "description": null,
+    "lab": "OTHER"
   }
 ]

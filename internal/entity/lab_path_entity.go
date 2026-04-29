@@ -7,8 +7,7 @@ type LabPath struct {
 	Name  string    `gorm:"type:text;uniqueIndex" json:"name"`
 	Color string    `gorm:"type:text" json:"color"`
 
-	PathEdges     []PathEdge     `gorm:"foreignKey:Lab;references:Name" json:"path_edges,omitempty"`
-	Prerequisites []Prerequisite `gorm:"foreignKey:Lab;references:Name" json:"prerequisites,omitempty"`
+	Courses []Course `gorm:"foreignKey:Lab;references:Name" json:"courses,omitempty"`
 
 	Timestamp
 }
