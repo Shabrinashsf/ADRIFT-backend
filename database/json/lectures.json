@@ -1,0 +1,262 @@
+[
+  {
+    "id": "67457737-7d37-4f93-9eaa-91bc06a3fb51",
+    "code": "AB",
+    "name": "Agus Budi Raharjo, S.Kom., M.Kom., Ph.D."
+  },
+  {
+    "id": "03473edb-34d0-49f5-9fda-c7822650c91d",
+    "code": "AI",
+    "name": "Aldinata Rizky Revanda, S.Kom., M.Kom."
+  },
+  {
+    "id": "453eeb73-e4f5-4a14-95fd-50edc0dbe60b",
+    "code": "AL",
+    "name": "Adhatus Solichah Ahmadiyah, S.Kom., M.Sc."
+  },
+  {
+    "id": "16ec2ae0-a4a5-437f-8931-63a97172c52a",
+    "code": "AM",
+    "name": "Ir. Ary Mazharuddin Shiddiqi, S.Kom., M.Comp.Sc., Ph.D."
+  },
+  {
+    "id": "44f93351-2ee5-4b76-9c88-ff2f6e11f0b9",
+    "code": "AS",
+    "name": "Dr. Ahmad Saikhu, S.Si., M.T."
+  },
+  {
+    "id": "9d8c7bc1-3950-45ee-8c69-9a7c837c38f1",
+    "code": "AW",
+    "name": "Ir. Arya Yudhi Wijaya, S.Kom., M.Kom."
+  },
+  {
+    "id": "e22b6aac-fe41-4803-b6cb-ca5b73ee61d6",
+    "code": "AY",
+    "name": "Dr. Anny Yuniarti, S.Kom., M.Comp.Sc."
+  },
+  {
+    "id": "6aacb291-b7f1-44a3-aaeb-7e150cf22221",
+    "code": "AZ",
+    "name": "Prof. Dr. Agus Zainal Arifin, S.Kom., M.Kom."
+  },
+  {
+    "id": "1448ebee-82db-49f9-b133-f013f48e045d",
+    "code": "BA",
+    "name": "Dr. Bilqis Amaliah, S.Kom., M.Kom."
+  },
+  {
+    "id": "8f9db854-ac56-4bce-8fc0-e581929be452",
+    "code": "BJ",
+    "name": "Bagus Jati Santoso, S.Kom., Ph.D."
+  },
+  {
+    "id": "b529836c-b8c8-4bd6-b8b2-4e7bbc20d7e8",
+    "code": "BN",
+    "name": "Bintang Nuralamsyah, S.Kom., M.Kom."
+  },
+  {
+    "id": "707db3b2-9218-49d9-ada7-eee5779c77ff",
+    "code": "BS",
+    "name": "Dr. Baskoro Adi Pratomo., S.Kom., M.Kom."
+  },
+  {
+    "id": "4f040235-7b7b-4c75-a740-716fe81d64b1",
+    "code": "CF",
+    "name": "Prof. Dr.Eng. Chastine Fatichah, S.Kom., M.Kom."
+  },
+  {
+    "id": "4f7ec9ad-b47f-4329-a243-03b443b9f281",
+    "code": "DA",
+    "name": "Dini Adni Navastara, S.Kom., M.Sc."
+  },
+  {
+    "id": "44f39fc9-a06f-418d-9f4b-f24de0ed506e",
+    "code": "DH",
+    "name": "Dr.Eng. Darlis Herumurti, S.Kom., M.Kom."
+  },
+  {
+    "id": "fd7f879d-da3a-44a4-8146-2a988ad11cf0",
+    "code": "DO",
+    "name": "Prof. Daniel Oranova Siahaan, S.Kom., M.Sc., PD.Eng."
+  },
+  {
+    "id": "b2920d4b-3161-43e1-bbee-7bf88b70c9ee",
+    "code": "DP",
+    "name": "Prof. Dr. Ir. Diana Purwitasari, S.Kom., M.Sc."
+  },
+  {
+    "id": "d934f5de-e277-4fce-9a21-16e2ad948a73",
+    "code": "DS",
+    "name": "Dr. Dwi Sunaryono, S.Kom., M.Kom."
+  },
+  {
+    "id": "f57340d5-1a9a-4ee8-819b-ebc0c5fd4f2f",
+    "code": "FB",
+    "name": "Fajar Baskoro, S.Kom., M.T."
+  },
+  {
+    "id": "f77b0ed4-20f1-4593-8657-fdb71b60f0a8",
+    "code": "HF",
+    "name": "Hadziq Fabroyir, S.Kom., Ph.D."
+  },
+  {
+    "id": "01726519-8f6e-4a54-ba93-5b8f2b122a45",
+    "code": "HM",
+    "name": "Dr.Eng. Muhamad Hilmil Muchtar Aditya Pradana, S. Kom., M. Sc."
+  },
+  {
+    "id": "1b6373c6-3529-48c5-840c-6f32706af894",
+    "code": "HM",
+    "name": "Dr.Eng. Muhamad Hilmil Muchtar Aditya Pradana, S.Kom., M.Sc."
+  },
+  {
+    "id": "1cc3f49f-5273-4489-aaa8-df9b3ff4b91f",
+    "code": "HS",
+    "name": "Hudan Studiawan, S.Kom., M.Kom., Ph.D."
+  },
+  {
+    "id": "c91144ef-d25a-46f4-9130-034474f51dbf",
+    "code": "HT",
+    "name": "Prof. Ir. Handayani Tjandrasa, M.Sc., Ph.D."
+  },
+  {
+    "id": "e6c389cb-9703-47cc-8226-ff6e4f7ff5e7",
+    "code": "IG",
+    "name": "Ilham Gurat Adillion, S.Kom., M.Eng."
+  },
+  {
+    "id": "83ae4676-6add-41f8-ac0a-e0173972dc54",
+    "code": "IM",
+    "name": "Imam Kuswardayan, S.Kom., M.T."
+  },
+  {
+    "id": "1fd16023-27df-4616-ad23-891d29db72a5",
+    "code": "IS",
+    "name": "Ir. Misbakhul Munir Irfan Subakti, S.Kom, M.Sc., M.Phil."
+  },
+  {
+    "id": "8c7d41a3-9cce-4e55-9c8d-0dd3a152aa76",
+    "code": "JL",
+    "name": "Prof. Dr. Ir. Joko Lianto Buliali, M.Sc."
+  },
+  {
+    "id": "d8b0ea77-84b2-42ce-970d-1a6a33985f4c",
+    "code": "KR",
+    "name": "Dr. Kelly Rossa Sungkono, S.Kom., M.Kom."
+  },
+  {
+    "id": "36dc3c08-dab0-415f-b8ed-cc98af06d225",
+    "code": "MK",
+    "name": "Imam Mustafa Kamal, S.ST., Ph.D."
+  },
+  {
+    "id": "6bceb9f5-cde9-485b-96ca-c8949bd490f0",
+    "code": "MN",
+    "name": "Abdul Munif, S.Kom., M.Sc.Eng."
+  },
+  {
+    "id": "c0e68f06-7e9a-41b5-9768-f5a475069bda",
+    "code": "NF",
+    "name": "Nurul Fajrin Ariyani, S.Kom., M.Sc."
+  },
+  {
+    "id": "493023d9-27be-4368-b4e2-58ebba77092b",
+    "code": "NS",
+    "name": "Prof. Dr.Eng. Nanik Suciati, S.Kom., M.Kom."
+  },
+  {
+    "id": "14ab8d4c-c6ad-4307-95f0-da9af27bf286",
+    "code": "NZ",
+    "name": "Moch. Nafkhan Alzamzami, S.T., M.T."
+  },
+  {
+    "id": "dd30a2bd-367e-4eef-9ac5-e575161db6f8",
+    "code": "RA",
+    "name": "Dr.Eng. Radityo Anggoro, S.Kom., M.Sc."
+  },
+  {
+    "id": "c7f5ecd6-7e0a-496e-843e-bba81e347646",
+    "code": "RJ",
+    "name": "Rizky Januar Akbar, S.Kom., M.Eng."
+  },
+  {
+    "id": "e561b9ae-3ba5-4dab-8b90-b3f01f7caa37",
+    "code": "RL",
+    "name": "Rully Soelaiman, S.Kom., M.Kom."
+  },
+  {
+    "id": "af03708d-64ad-4c76-a004-64c12d7bd253",
+    "code": "RM",
+    "name": "Royyana Muslim Ijtihadie, S.Kom., M.Kom., Ph.D."
+  },
+  {
+    "id": "7c117d05-30be-4d8d-ac16-32b3d22d72e3",
+    "code": "RN",
+    "name": "Ratih Nur Esti Anggraini, S.Kom., M.Sc., Ph.D."
+  },
+  {
+    "id": "c7be66ae-5f47-4976-aafe-49e49ab98e4c",
+    "code": "RS",
+    "name": "Prof. Drs.Ec. Ir. Riyanarto Sarno, M.Sc., Ph.D."
+  },
+  {
+    "id": "1d6cc693-e66f-475f-9185-14506964b92f",
+    "code": "SA",
+    "name": "Siska Arifiani, S.Kom., M.Kom."
+  },
+  {
+    "id": "dd4ab3e8-b1be-4d43-b723-5d4a499df067",
+    "code": "SC",
+    "name": "Shintami Chusnul Hidayati, S.Kom., M.Sc., Ph.D."
+  },
+  {
+    "id": "1c53959f-7ee0-42f7-a52c-4b246eb1aae1",
+    "code": "SD",
+    "name": "Prof. Ir. Supeno Djanali, M.Sc., Ph.D."
+  },
+  {
+    "id": "35bba248-bcb9-41d6-9091-aa4c5909c254",
+    "code": "SL",
+    "name": "Ir. Suhadi Lili, M.T.I."
+  },
+  {
+    "id": "5837bef3-f619-4daa-b1e2-04c9db919b07",
+    "code": "SR",
+    "name": "Dr. Sarwosri, S.Kom., M.T."
+  },
+  {
+    "id": "9301a2ef-8e24-45e3-94d5-d10e380e64e3",
+    "code": "ST",
+    "name": "Ir. Siti Rochimah, M.T., Ph.D."
+  },
+  {
+    "id": "58aff132-ec06-496b-b398-b44cdd0ed575",
+    "code": "TA",
+    "name": "Prof. Tohari Ahmad, S.Kom., MIT., Ph.D."
+  },
+  {
+    "id": "673cb7b3-3314-41d0-9470-a7a8e91f4fce",
+    "code": "UY",
+    "name": "Prof. Dr. Ir. Umi Laili Yuhana, S.Kom., M.Sc."
+  },
+  {
+    "id": "803a5ee9-2d53-4f45-a6ef-e7c4619dd2ad",
+    "code": "VH",
+    "name": "Victor Hariadi, S.Si., M.Kom."
+  },
+  {
+    "id": "78aafc1b-9465-4907-8a46-a20f8d586c43",
+    "code": "WN",
+    "name": "Wijayanti Nurul Khotimah, S.Kom., M.Sc., Ph.D."
+  },
+  {
+    "id": "979966f5-e708-4ee8-a4c2-4e0ea0f49edc",
+    "code": "WS",
+    "name": "Dr. Wahyu Suadi, S.Kom., M.Kom."
+  },
+  {
+    "id": "8820388c-34ce-44f5-8e79-009935dd8a90",
+    "code": "YP",
+    "name": "Dr. Yudhi Purwananto, S.Kom., M.Kom."
+  }
+]
