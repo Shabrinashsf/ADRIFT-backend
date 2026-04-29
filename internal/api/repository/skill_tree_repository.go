@@ -70,12 +70,19 @@ func (r *skillTreeRepository) GetCourseByID(ctx context.Context, courseID uuid.U
 }
 
 func (r *skillTreeRepository) GetSchedulesByCourseID(ctx context.Context, courseID uuid.UUID) ([]entity.Schedule, error) {
+	var course entity.Course
+	if err := r.db.WithContext(ctx).Where("id = ?", courseID).First(&course).Error; err != nil {
+		return nil, err
+	}
+
 	var schedules []entity.Schedule
-	err := r.db.WithContext(ctx).
+	if err := r.db.WithContext(ctx).
 		Preload("Lecture").
-		Where("course_id = ?", courseID).
-		Find(&schedules).Error
-	return schedules, err
+		Where("course_name = ?", course.Name).
+		Find(&schedules).Error; err != nil {
+		return nil, err
+	}
+	return schedules, nil
 }
 
 // GetUnlocksByCourseID: returns courses that have courseID as a prerequisite OR as a path edge source

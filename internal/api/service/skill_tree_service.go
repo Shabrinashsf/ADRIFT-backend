@@ -117,8 +117,8 @@ func (s *skillTreeService) GetNodeDetail(ctx context.Context, courseID uuid.UUID
 			ID:          sch.ID.String(),
 			Class:       sch.Class,
 			Day:         string(sch.Day),
-			StartTime:   sch.StartTime.Format("15:04"),
-			EndTime:     sch.EndTime.Format("15:04"),
+			StartTime:   sch.StartTime.In(wibLocation).Format("15:04"),
+			EndTime:     sch.EndTime.In(wibLocation).Format("15:04"),
 			LectureName: lectureName,
 			Room:        sch.Room,
 			Capacity:    sch.Capacity,
@@ -288,7 +288,7 @@ func (s *skillTreeService) GetProgressSummary(ctx context.Context, userID uuid.U
 		totalCreditsRequired += c.Credit
 		st := nodeStatuses[c.ID]
 		switch st {
-		case entity.NodeStatusDisable: // COMPLETED
+		case entity.NodeStatusCompleted: // COMPLETED
 			completed++
 			totalCreditsCompleted += c.Credit
 		case entity.NodeStatusAvailable:
@@ -352,7 +352,7 @@ func (s *skillTreeService) ClaimCourse(ctx context.Context, userID, courseID uui
 		ID:        uuid.New(),
 		UserID:    userID,
 		CourseID:  courseID,
-		Status:    entity.NodeStatusDisable,
+		Status:    entity.NodeStatusCompleted,
 		Grade:     grade,
 		ClaimedAt: &now,
 	}
@@ -360,7 +360,7 @@ func (s *skillTreeService) ClaimCourse(ctx context.Context, userID, courseID uui
 	// If existing, update it
 	existing, err := s.skillTreeRepo.GetProgressByCourseAndUser(ctx, userID, courseID)
 	if err == nil && existing != nil {
-		existing.Status = entity.NodeStatusDisable
+		existing.Status = entity.NodeStatusCompleted
 		existing.Grade = grade
 		existing.ClaimedAt = &now
 		progress = existing
@@ -401,7 +401,7 @@ func (s *skillTreeService) UnclaimCourse(ctx context.Context, userID, courseID u
 	if err != nil || existing == nil {
 		return dto.UnclaimCourseResponse{}, dto.ErrProgressNotFound
 	}
-	if existing.Status != entity.NodeStatusDisable {
+	if existing.Status != entity.NodeStatusCompleted {
 		return dto.UnclaimCourseResponse{}, dto.ErrCourseNotCompleted
 	}
 
@@ -480,14 +480,14 @@ func computeNodeStatuses(
 	result := map[uuid.UUID]entity.NodeStatus{}
 
 	for _, c := range courses {
-		if completedMap[c.ID] == entity.NodeStatusDisable {
-			result[c.ID] = entity.NodeStatusDisable
+		if completedMap[c.ID] == entity.NodeStatusCompleted {
+			result[c.ID] = entity.NodeStatusCompleted
 			continue
 		}
 
 		allPrereqMet := true
 		for _, reqID := range prereqMap[c.ID] {
-			if completedMap[reqID] != entity.NodeStatusDisable {
+			if completedMap[reqID] != entity.NodeStatusCompleted {
 				allPrereqMet = false
 				break
 			}
@@ -495,7 +495,7 @@ func computeNodeStatuses(
 
 		allPathMet := true
 		for _, srcID := range pathInMap[c.ID] {
-			if completedMap[srcID] != entity.NodeStatusDisable {
+			if completedMap[srcID] != entity.NodeStatusCompleted {
 				allPathMet = false
 				break
 			}

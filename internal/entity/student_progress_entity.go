@@ -11,7 +11,7 @@ type NodeStatus string
 const (
 	NodeStatusAvailable NodeStatus = "AVAILABLE"
 	NodeStatusLocked    NodeStatus = "LOCKED"
-	NodeStatusDisable   NodeStatus = "COMPLETED"
+	NodeStatusCompleted NodeStatus = "COMPLETED"
 )
 
 type StudentProgress struct {

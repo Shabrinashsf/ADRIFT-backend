@@ -17,7 +17,7 @@ func SkillTree(route *gin.Engine, skillTreeController controller.SkillTreeContro
 		graph.GET("/nodes/:courseId/chain", skillTreeController.GetNodeChain)
 
 		// Authenticated (student only)
-		authGraph := graph.Group("", middleware.Authenticate(jwtService))
+		authGraph := graph.Group("", middleware.Authenticate(jwtService), middleware.OnlyAllow("STUDENT"))
 		{
 			authGraph.GET("/progress", skillTreeController.GetProgressGraph)
 			authGraph.GET("/progress/summary", skillTreeController.GetProgressSummary)

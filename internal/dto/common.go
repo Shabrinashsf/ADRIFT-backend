@@ -20,7 +20,7 @@ const (
 )
 
 var (
-	ErrRoleNotAllowed      = myerror.New("role not allowed", http.StatusUnauthorized)
+	ErrRoleNotAllowed      = myerror.New("role not allowed", http.StatusForbidden)
 	ErrFailedParseTime     = myerror.New("failed to parse time", http.StatusInternalServerError)
 	ErrFailedProsesRequest = myerror.New("failed to process request", http.StatusInternalServerError)
 	ErrOutOfTime           = myerror.New("request made outside of allowed time frame", http.StatusBadRequest)

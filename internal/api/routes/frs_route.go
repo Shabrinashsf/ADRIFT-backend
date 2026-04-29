@@ -16,9 +16,13 @@ func FRS(route *gin.Engine, frsController controller.FRSController, jwtService s
 		admin.POST("/schedule/submit", frsController.SubmitSchedule)
 	}
 
-	student := route.Group("api/frs").Use(middleware.Authenticate(jwtService))
+	authenticated := route.Group("api/frs").Use(middleware.Authenticate(jwtService))
 	{
-		student.GET("/schedules", frsController.ListSchedules)
+		authenticated.GET("/schedules", frsController.ListSchedules)
+	}
+
+	student := route.Group("api/frs").Use(middleware.Authenticate(jwtService), middleware.OnlyAllow("STUDENT"))
+	{
 		student.POST("", frsController.CreateFRSPlan)
 		student.POST("/alternative", frsController.FindAlternatives)
 		student.GET("", frsController.ListFRSPlans)
