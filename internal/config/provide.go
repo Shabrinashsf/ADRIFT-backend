@@ -66,6 +66,12 @@ func NewProvider(db *gorm.DB) *Provider {
 		return repository.NewSkillTreeRepository(db), nil
 	})
 
+	// Admin Repository
+	do.Provide(injector, func(i *do.Injector) (repository.AdminRepository, error) {
+		db := do.MustInvoke[*gorm.DB](i)
+		return repository.NewAdminRepository(db), nil
+	})
+
 	do.Provide(injector, func(i *do.Injector) (service.UserService, error) {
 		userRepo := do.MustInvoke[repository.UserRepository](i)
 		jwtService := do.MustInvoke[service.JWTService](i)
@@ -86,6 +92,12 @@ func NewProvider(db *gorm.DB) *Provider {
 	do.Provide(injector, func(i *do.Injector) (service.SkillTreeService, error) {
 		stRepo := do.MustInvoke[repository.SkillTreeRepository](i)
 		return service.NewSkillTreeService(stRepo), nil
+	})
+
+	// Admin Service
+	do.Provide(injector, func(i *do.Injector) (service.AdminService, error) {
+		adminRepo := do.MustInvoke[repository.AdminRepository](i)
+		return service.NewAdminService(adminRepo), nil
 	})
 
 	// =========== CONTROLLERS ===========
@@ -114,6 +126,13 @@ func NewProvider(db *gorm.DB) *Provider {
 		stService := do.MustInvoke[service.SkillTreeService](i)
 		validator := do.MustInvoke[*validate.Validator](i)
 		return controller.NewSkillTreeController(stService, validator), nil
+	})
+
+	// Admin Controller
+	do.Provide(injector, func(i *do.Injector) (controller.AdminController, error) {
+		adminService := do.MustInvoke[service.AdminService](i)
+		validator := do.MustInvoke[*validate.Validator](i)
+		return controller.NewAdminController(adminService, validator), nil
 	})
 
 	return &Provider{
@@ -161,6 +180,11 @@ func (p *Provider) InvokeUserRepository() repository.UserRepository {
 // InvokeSkillTreeController returns the SkillTree controller instance
 func (p *Provider) InvokeSkillTreeController() controller.SkillTreeController {
 	return do.MustInvoke[controller.SkillTreeController](p.injector)
+}
+
+// InvokeAdminController returns the Admin controller instance
+func (p *Provider) InvokeAdminController() controller.AdminController {
+	return do.MustInvoke[controller.AdminController](p.injector)
 }
 
 // InvokeDatabase returns the database instance
