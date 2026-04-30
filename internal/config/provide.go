@@ -72,12 +72,6 @@ func NewProvider(db *gorm.DB) *Provider {
 		return repository.NewAdminRepository(db), nil
 	})
 
-	// Admin Repository
-	do.Provide(injector, func(i *do.Injector) (repository.AdminRepository, error) {
-		db := do.MustInvoke[*gorm.DB](i)
-		return repository.NewAdminRepository(db), nil
-	})
-
 	// =========== SERVICES ===========
 	do.Provide(injector, func(i *do.Injector) (service.UserService, error) {
 		userRepo := do.MustInvoke[repository.UserRepository](i)

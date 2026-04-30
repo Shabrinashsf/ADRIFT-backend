@@ -198,7 +198,6 @@ const (
 var (
 	ErrLabPathNotFound      = myerror.New("lab path not found", http.StatusNotFound)
 	ErrLabPathNameExists    = myerror.New("lab path name already exists", http.StatusConflict)
-	ErrAdminCourseNotFound  = myerror.New("course not found", http.StatusNotFound)
 	ErrCourseCodeExists     = myerror.New("course code already exists", http.StatusConflict)
 	ErrPrerequisiteExists   = myerror.New("prerequisite already exists", http.StatusConflict)
 	ErrPrerequisiteNotFound = myerror.New("prerequisite not found", http.StatusNotFound)

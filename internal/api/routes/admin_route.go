@@ -12,20 +12,20 @@ func Admin(route *gin.Engine, adminController controller.AdminController, frsCon
 	admin := route.Group("api/admin")
 	admin.Use(middleware.Authenticate(jwtService), middleware.OnlyAllow("ADMIN"))
 	{
-		// Course endpoints
+		// Course
 		admin.GET("/courses", adminController.ListCourseGroups)
 		admin.GET("/courses/:semester", adminController.ListCoursesBySemester)
 		admin.POST("/courses", adminController.CreateCourse)
 		admin.PATCH("/courses/:courseId", adminController.UpdateCourse)
 		admin.DELETE("/courses/:courseId", adminController.DeleteCourse)
 
-		// Schedule endpoints
+		// Schedule
 		admin.GET("/schedules", adminController.ListSchedules)
 		admin.POST("/schedules", adminController.CreateSchedule)
 		admin.PATCH("/schedules/:scheduleId", adminController.UpdateSchedule)
 		admin.DELETE("/schedules/:scheduleId", adminController.DeleteSchedule)
 
-		// FRS schedule management
+		// FRS schedule
 		admin.POST("/schedule/upload", frsController.UploadScheduleFile)
 		admin.POST("/schedule/revise", frsController.DeleteScheduleArtifacts)
 		admin.POST("/schedule/submit", frsController.SubmitSchedule)
