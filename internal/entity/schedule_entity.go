@@ -55,6 +55,8 @@ type Schedule struct {
 	FRSPlanItems []FRSPlanItem `gorm:"foreignKey:ScheduleID;references:ID" json:"frs_plan_items,omitempty"`
 
 	Lecture *Lecture `gorm:"foreignKey:LectureID;references:ID"`
+
+	Timestamp
 }
 
 func (s *Schedule) TableName() string {
