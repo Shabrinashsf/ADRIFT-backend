@@ -8,25 +8,15 @@ import (
 
 // =========== MESSAGES ===========
 const (
-	// Course
-	MESSAGE_SUCCESS_GET_COURSES    = "Courses retrieved successfully"
-	MESSAGE_SUCCESS_CREATE_COURSE  = "Course created successfully"
-	MESSAGE_SUCCESS_UPDATE_COURSE  = "Course updated successfully"
-	MESSAGE_SUCCESS_DELETE_COURSE  = "Course deleted successfully"
-	MESSAGE_FAILED_GET_COURSES     = "Failed to retrieve courses"
-	MESSAGE_FAILED_CREATE_COURSE   = "Failed to create course"
-	MESSAGE_FAILED_UPDATE_COURSE   = "Failed to update course"
-	MESSAGE_FAILED_DELETE_COURSE   = "Failed to delete course"
-
 	// Lab Path
-	MESSAGE_SUCCESS_GET_LAB_PATHS    = "Lab paths retrieved successfully"
-	MESSAGE_SUCCESS_CREATE_LAB_PATH  = "Lab path created successfully"
-	MESSAGE_SUCCESS_UPDATE_LAB_PATH  = "Lab path updated successfully"
-	MESSAGE_SUCCESS_DELETE_LAB_PATH  = "Lab path deleted successfully"
-	MESSAGE_FAILED_GET_LAB_PATHS     = "Failed to retrieve lab paths"
-	MESSAGE_FAILED_CREATE_LAB_PATH   = "Failed to create lab path"
-	MESSAGE_FAILED_UPDATE_LAB_PATH   = "Failed to update lab path"
-	MESSAGE_FAILED_DELETE_LAB_PATH   = "Failed to delete lab path"
+	MESSAGE_SUCCESS_GET_LAB_PATHS   = "Lab paths retrieved successfully"
+	MESSAGE_SUCCESS_CREATE_LAB_PATH = "Lab path created successfully"
+	MESSAGE_SUCCESS_UPDATE_LAB_PATH = "Lab path updated successfully"
+	MESSAGE_SUCCESS_DELETE_LAB_PATH = "Lab path deleted successfully"
+	MESSAGE_FAILED_GET_LAB_PATHS    = "Failed to retrieve lab paths"
+	MESSAGE_FAILED_CREATE_LAB_PATH  = "Failed to create lab path"
+	MESSAGE_FAILED_UPDATE_LAB_PATH  = "Failed to update lab path"
+	MESSAGE_FAILED_DELETE_LAB_PATH  = "Failed to delete lab path"
 
 	// Prerequisite
 	MESSAGE_SUCCESS_CREATE_PREREQUISITE = "Prerequisite created successfully"
@@ -51,50 +41,17 @@ const (
 
 // =========== ERRORS ===========
 var (
-	ErrLabPathNotFound     = myerror.New("lab path not found", http.StatusNotFound)
-	ErrLabPathNameExists   = myerror.New("lab path name already exists", http.StatusConflict)
-	ErrAdminCourseNotFound = myerror.New("course not found", http.StatusNotFound)
-	ErrCourseCodeExists    = myerror.New("course code already exists", http.StatusConflict)
-	ErrPrerequisiteExists  = myerror.New("prerequisite already exists", http.StatusConflict)
+	ErrLabPathNotFound      = myerror.New("lab path not found", http.StatusNotFound)
+	ErrLabPathNameExists    = myerror.New("lab path name already exists", http.StatusConflict)
+	ErrAdminCourseNotFound  = myerror.New("course not found", http.StatusNotFound)
+	ErrCourseCodeExists     = myerror.New("course code already exists", http.StatusConflict)
+	ErrPrerequisiteExists   = myerror.New("prerequisite already exists", http.StatusConflict)
 	ErrPrerequisiteNotFound = myerror.New("prerequisite not found", http.StatusNotFound)
-	ErrPathEdgeExists      = myerror.New("path edge already exists", http.StatusConflict)
-	ErrPathEdgeNotFound    = myerror.New("path edge not found", http.StatusNotFound)
-	ErrLectureNotFound     = myerror.New("lecture not found", http.StatusNotFound)
-	ErrLectureCodeExists   = myerror.New("lecture code already exists", http.StatusConflict)
+	ErrPathEdgeExists       = myerror.New("path edge already exists", http.StatusConflict)
+	ErrPathEdgeNotFound     = myerror.New("path edge not found", http.StatusNotFound)
+	ErrLectureNotFound      = myerror.New("lecture not found", http.StatusNotFound)
+	ErrLectureCodeExists    = myerror.New("lecture code already exists", http.StatusConflict)
 )
-
-// =========== COURSE ===========
-
-type AdminCourseResponse struct {
-	ID          string  `json:"id"`
-	Code        string  `json:"code"`
-	Name        string  `json:"name"`
-	Credit      int     `json:"credit"`
-	Semester    int     `json:"semester"`
-	IsElective  bool    `json:"is_elective"`
-	Lab         string  `json:"lab"`
-	Description *string `json:"description"`
-}
-
-type CreateCourseRequest struct {
-	Code        string  `json:"code" binding:"required"`
-	Name        string  `json:"name" binding:"required"`
-	Credit      int     `json:"credit" binding:"required"`
-	Semester    int     `json:"semester" binding:"required"`
-	IsElective  bool    `json:"is_elective"`
-	Lab         string  `json:"lab" binding:"required"`
-	Description *string `json:"description"`
-}
-
-type UpdateCourseRequest struct {
-	Code        *string `json:"code"`
-	Name        *string `json:"name"`
-	Credit      *int    `json:"credit"`
-	Semester    *int    `json:"semester"`
-	IsElective  *bool   `json:"is_elective"`
-	Lab         *string `json:"lab"`
-	Description *string `json:"description"`
-}
 
 // =========== LAB PATH ===========
 

@@ -8,17 +8,10 @@ import (
 	"ADRIFT-backend/internal/entity"
 
 	"github.com/google/uuid"
-	"gorm.io/gorm"
 )
 
 type (
 	AdminService interface {
-		// Course
-		GetAllCourses(ctx context.Context) ([]dto.AdminCourseResponse, error)
-		CreateCourse(ctx context.Context, req dto.CreateCourseRequest) (dto.AdminCourseResponse, error)
-		UpdateCourse(ctx context.Context, id uuid.UUID, req dto.UpdateCourseRequest) (dto.AdminCourseResponse, error)
-		DeleteCourse(ctx context.Context, id uuid.UUID) error
-
 		// Lab Path
 		GetAllLabPaths(ctx context.Context) ([]dto.AdminLabPathResponse, error)
 		CreateLabPath(ctx context.Context, req dto.CreateLabPathRequest) (dto.AdminLabPathResponse, error)
@@ -46,93 +39,6 @@ type (
 
 func NewAdminService(adminRepo repository.AdminRepository) AdminService {
 	return &adminService{adminRepo: adminRepo}
-}
-
-// =========== COURSE ===========
-
-func (s *adminService) GetAllCourses(ctx context.Context) ([]dto.AdminCourseResponse, error) {
-	courses, err := s.adminRepo.GetAllCourses(ctx)
-	if err != nil {
-		return nil, err
-	}
-	result := make([]dto.AdminCourseResponse, 0, len(courses))
-	for _, c := range courses {
-		result = append(result, courseToAdminResponse(c))
-	}
-	return result, nil
-}
-
-func (s *adminService) CreateCourse(ctx context.Context, req dto.CreateCourseRequest) (dto.AdminCourseResponse, error) {
-	// Check code uniqueness
-	_, err := s.adminRepo.GetCourseByCode(ctx, req.Code)
-	if err == nil {
-		return dto.AdminCourseResponse{}, dto.ErrCourseCodeExists
-	}
-
-	id, _ := uuid.NewV7()
-	course := &entity.Course{
-		ID:          id,
-		Code:        req.Code,
-		Name:        req.Name,
-		Credit:      req.Credit,
-		Semester:    req.Semester,
-		IsElective:  req.IsElective,
-		Lab:         req.Lab,
-		Description: req.Description,
-	}
-
-	if err := s.adminRepo.CreateCourse(ctx, course); err != nil {
-		return dto.AdminCourseResponse{}, err
-	}
-
-	return courseToAdminResponse(*course), nil
-}
-
-func (s *adminService) UpdateCourse(ctx context.Context, id uuid.UUID, req dto.UpdateCourseRequest) (dto.AdminCourseResponse, error) {
-	_, err := s.adminRepo.GetCourseByID(ctx, id)
-	if err != nil {
-		if err == gorm.ErrRecordNotFound {
-			return dto.AdminCourseResponse{}, dto.ErrAdminCourseNotFound
-		}
-		return dto.AdminCourseResponse{}, err
-	}
-
-	updates := map[string]interface{}{}
-	if req.Code != nil {
-		updates["code"] = *req.Code
-	}
-	if req.Name != nil {
-		updates["name"] = *req.Name
-	}
-	if req.Credit != nil {
-		updates["credit"] = *req.Credit
-	}
-	if req.Semester != nil {
-		updates["semester"] = *req.Semester
-	}
-	if req.IsElective != nil {
-		updates["is_elective"] = *req.IsElective
-	}
-	if req.Lab != nil {
-		updates["lab"] = *req.Lab
-	}
-	if req.Description != nil {
-		updates["description"] = *req.Description
-	}
-
-	updated, err := s.adminRepo.UpdateCourse(ctx, id, updates)
-	if err != nil {
-		return dto.AdminCourseResponse{}, err
-	}
-	return courseToAdminResponse(*updated), nil
-}
-
-func (s *adminService) DeleteCourse(ctx context.Context, id uuid.UUID) error {
-	_, err := s.adminRepo.GetCourseByID(ctx, id)
-	if err != nil {
-		return dto.ErrAdminCourseNotFound
-	}
-	return s.adminRepo.DeleteCourse(ctx, id)
 }
 
 // =========== LAB PATH ===========
@@ -360,19 +266,4 @@ func (s *adminService) UpdateLecture(ctx context.Context, id uuid.UUID, req dto.
 		Code: updated.Code,
 		Name: updated.Name,
 	}, nil
-}
-
-// =========== HELPERS ===========
-
-func courseToAdminResponse(c entity.Course) dto.AdminCourseResponse {
-	return dto.AdminCourseResponse{
-		ID:          c.ID.String(),
-		Code:        c.Code,
-		Name:        c.Name,
-		Credit:      c.Credit,
-		Semester:    c.Semester,
-		IsElective:  c.IsElective,
-		Lab:         c.Lab,
-		Description: c.Description,
-	}
 }

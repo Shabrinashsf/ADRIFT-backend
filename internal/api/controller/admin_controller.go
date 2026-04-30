@@ -17,12 +17,6 @@ import (
 
 type (
 	AdminController interface {
-		// Course
-		GetAllCourses(ctx *gin.Context)
-		CreateCourse(ctx *gin.Context)
-		UpdateCourse(ctx *gin.Context)
-		DeleteCourse(ctx *gin.Context)
-
 		// Lab Path
 		GetAllLabPaths(ctx *gin.Context)
 		CreateLabPath(ctx *gin.Context)
@@ -54,77 +48,6 @@ func NewAdminController(ads service.AdminService, validator *validate.Validator)
 		adminService: ads,
 		validator:    validator,
 	}
-}
-
-// =========== COURSE ===========
-
-func (c *adminController) GetAllCourses(ctx *gin.Context) {
-	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
-	defer cancel()
-
-	result, err := c.adminService.GetAllCourses(reqCtx)
-	if err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_GET_COURSES, err, nil).Send(ctx)
-		return
-	}
-	response.NewSuccess(dto.MESSAGE_SUCCESS_GET_COURSES, result).Send(ctx)
-}
-
-func (c *adminController) CreateCourse(ctx *gin.Context) {
-	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
-	defer cancel()
-
-	var req dto.CreateCourseRequest
-	if !c.validator.Bind(ctx, &req) {
-		return
-	}
-
-	result, err := c.adminService.CreateCourse(reqCtx, req)
-	if err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_CREATE_COURSE, err, nil).Send(ctx)
-		return
-	}
-	response.NewSuccess(dto.MESSAGE_SUCCESS_CREATE_COURSE, result).Send(ctx)
-}
-
-func (c *adminController) UpdateCourse(ctx *gin.Context) {
-	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
-	defer cancel()
-
-	courseID, err := uuid.Parse(ctx.Param("courseId"))
-	if err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_UPDATE_COURSE, myerror.New("invalid course id", http.StatusBadRequest), nil).Send(ctx)
-		return
-	}
-
-	var req dto.UpdateCourseRequest
-	if !c.validator.Bind(ctx, &req) {
-		return
-	}
-
-	result, err := c.adminService.UpdateCourse(reqCtx, courseID, req)
-	if err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_UPDATE_COURSE, err, nil).Send(ctx)
-		return
-	}
-	response.NewSuccess(dto.MESSAGE_SUCCESS_UPDATE_COURSE, result).Send(ctx)
-}
-
-func (c *adminController) DeleteCourse(ctx *gin.Context) {
-	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
-	defer cancel()
-
-	courseID, err := uuid.Parse(ctx.Param("courseId"))
-	if err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_DELETE_COURSE, myerror.New("invalid course id", http.StatusBadRequest), nil).Send(ctx)
-		return
-	}
-
-	if err := c.adminService.DeleteCourse(reqCtx, courseID); err != nil {
-		response.NewFailed(dto.MESSAGE_FAILED_DELETE_COURSE, err, nil).Send(ctx)
-		return
-	}
-	response.NewSuccess(dto.MESSAGE_SUCCESS_DELETE_COURSE, nil).Send(ctx)
 }
 
 // =========== LAB PATH ===========

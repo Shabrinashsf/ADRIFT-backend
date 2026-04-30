@@ -11,14 +11,6 @@ import (
 
 type (
 	AdminRepository interface {
-		// Course
-		GetAllCourses(ctx context.Context) ([]entity.Course, error)
-		GetCourseByID(ctx context.Context, id uuid.UUID) (*entity.Course, error)
-		GetCourseByCode(ctx context.Context, code string) (*entity.Course, error)
-		CreateCourse(ctx context.Context, course *entity.Course) error
-		UpdateCourse(ctx context.Context, id uuid.UUID, updates map[string]interface{}) (*entity.Course, error)
-		DeleteCourse(ctx context.Context, id uuid.UUID) error
-
 		// Lab Path
 		GetAllLabPaths(ctx context.Context) ([]entity.LabPath, error)
 		GetLabPathByID(ctx context.Context, id uuid.UUID) (*entity.LabPath, error)
@@ -54,47 +46,6 @@ type (
 
 func NewAdminRepository(db *gorm.DB) AdminRepository {
 	return &adminRepository{db: db}
-}
-
-// =========== COURSE ===========
-
-func (r *adminRepository) GetAllCourses(ctx context.Context) ([]entity.Course, error) {
-	var courses []entity.Course
-	err := r.db.WithContext(ctx).Preload("LabPath").Find(&courses).Error
-	return courses, err
-}
-
-func (r *adminRepository) GetCourseByID(ctx context.Context, id uuid.UUID) (*entity.Course, error) {
-	var course entity.Course
-	err := r.db.WithContext(ctx).Preload("LabPath").Where("id = ?", id).First(&course).Error
-	if err != nil {
-		return nil, err
-	}
-	return &course, nil
-}
-
-func (r *adminRepository) GetCourseByCode(ctx context.Context, code string) (*entity.Course, error) {
-	var course entity.Course
-	err := r.db.WithContext(ctx).Where("code = ?", code).First(&course).Error
-	if err != nil {
-		return nil, err
-	}
-	return &course, nil
-}
-
-func (r *adminRepository) CreateCourse(ctx context.Context, course *entity.Course) error {
-	return r.db.WithContext(ctx).Create(course).Error
-}
-
-func (r *adminRepository) UpdateCourse(ctx context.Context, id uuid.UUID, updates map[string]interface{}) (*entity.Course, error) {
-	if err := r.db.WithContext(ctx).Model(&entity.Course{}).Where("id = ?", id).Updates(updates).Error; err != nil {
-		return nil, err
-	}
-	return r.GetCourseByID(ctx, id)
-}
-
-func (r *adminRepository) DeleteCourse(ctx context.Context, id uuid.UUID) error {
-	return r.db.WithContext(ctx).Where("id = ?", id).Delete(&entity.Course{}).Error
 }
 
 // =========== LAB PATH ===========
