@@ -18,11 +18,14 @@ import (
 
 type (
 	AdminController interface {
+		// Course
 		ListCourseGroups(ctx *gin.Context)
 		ListCoursesBySemester(ctx *gin.Context)
 		CreateCourse(ctx *gin.Context)
 		UpdateCourse(ctx *gin.Context)
 		DeleteCourse(ctx *gin.Context)
+
+		// Schedule
 		ListSchedules(ctx *gin.Context)
 		CreateSchedule(ctx *gin.Context)
 		UpdateSchedule(ctx *gin.Context)
@@ -60,6 +63,8 @@ func NewAdminController(ads service.AdminService, validator *validate.Validator)
 		validator:    validator,
 	}
 }
+
+// =========== COURSE ===========
 
 func (c *adminController) ListCourseGroups(ctx *gin.Context) {
 	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
@@ -146,6 +151,8 @@ func (c *adminController) DeleteCourse(ctx *gin.Context) {
 
 	response.NewSuccess(dto.MESSAGE_SUCCESS_DELETE_COURSE, nil).Send(ctx)
 }
+
+// =========== SCHEDULE ===========
 
 func (c *adminController) ListSchedules(ctx *gin.Context) {
 	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)

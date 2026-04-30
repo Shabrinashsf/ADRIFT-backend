@@ -20,7 +20,6 @@ type ScheduleGroupResult struct {
 	Prodi        string
 	Semester     int
 }
-)
 
 type (
 	AdminRepository interface {
@@ -32,7 +31,7 @@ type (
 		CreateCourse(ctx context.Context, course entity.Course) (entity.Course, error)
 		UpdateCourse(ctx context.Context, id uuid.UUID, updates map[string]interface{}) (entity.Course, error)
 		SoftDeleteCourse(ctx context.Context, id uuid.UUID) error
-		
+
 		//Schedule
 		GetScheduleGroups(ctx context.Context) ([]ScheduleGroupResult, error)
 		GetSchedulesByFilter(ctx context.Context, academicYear, term string, prodi entity.ProdiType, semester int, courseName string) ([]entity.Schedule, error)
@@ -42,7 +41,7 @@ type (
 		CreateSchedule(ctx context.Context, schedule entity.Schedule) (entity.Schedule, error)
 		UpdateSchedule(ctx context.Context, id uuid.UUID, updates map[string]interface{}) (entity.Schedule, error)
 		DeleteSchedule(ctx context.Context, id uuid.UUID) error
-		
+
 		// Lab Path
 		GetAllLabPaths(ctx context.Context) ([]entity.LabPath, error)
 		GetLabPathByID(ctx context.Context, id uuid.UUID) (*entity.LabPath, error)
@@ -81,6 +80,8 @@ func NewAdminRepository(db *gorm.DB) AdminRepository {
 		db: db,
 	}
 }
+
+// =========== COURSE ===========
 
 func (r *adminRepository) GetCoursesGroupedBySemester(ctx context.Context) ([]CourseGroupResult, error) {
 	var groups []CourseGroupResult
@@ -155,6 +156,8 @@ func (r *adminRepository) SoftDeleteCourse(ctx context.Context, id uuid.UUID) er
 	}
 	return nil
 }
+
+// =========== SCHEDULE ===========
 
 func (r *adminRepository) GetScheduleGroups(ctx context.Context) ([]ScheduleGroupResult, error) {
 	var groups []ScheduleGroupResult
