@@ -32,6 +32,25 @@ func Admin(route *gin.Engine, adminController controller.AdminController, frsCon
 
 		// FRS file upload
 		admin.POST("/assets/frs/upload", fileController.UploadFRSTempFile)
+
+		// Lab Paths
+		admin.GET("/lab-paths", adminController.GetAllLabPaths)
+		admin.POST("/lab-paths", adminController.CreateLabPath)
+		admin.PATCH("/lab-paths/:labPathId", adminController.UpdateLabPath)
+		admin.DELETE("/lab-paths/:labPathId", adminController.DeleteLabPath)
+
+		// Prerequisites
+		admin.POST("/prerequisites", adminController.CreatePrerequisite)
+		admin.DELETE("/prerequisites/:courseId/:requireId", adminController.DeletePrerequisite)
+
+		// Path Edges
+		admin.POST("/path-edges", adminController.CreatePathEdge)
+		admin.DELETE("/path-edges/:pathEdgeId", adminController.DeletePathEdge)
+
+		// Lectures
+		admin.GET("/lectures", adminController.GetAllLectures)
+		admin.POST("/lectures", adminController.CreateLecture)
+		admin.PATCH("/lectures/:lectureId", adminController.UpdateLecture)
 	}
 
 	authenticated := route.Group("api/assets").Use(middleware.Authenticate(jwtService))

@@ -40,7 +40,7 @@ func NewRestConfig(db *gorm.DB) *RestConfig {
 	// Services needed for routes
 	jwtService := provider.InvokeJWTService()
 
-// =========== (ROUTES) ===========
+	// =========== (ROUTES) ===========
 	routes.User(server, userController, jwtService)
 	routes.SkillTree(server, skillTreeController, jwtService)
 	routes.Admin(server, adminController, frsController, fileController, jwtService)

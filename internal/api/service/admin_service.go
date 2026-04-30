@@ -15,16 +15,37 @@ import (
 
 type (
 	AdminService interface {
+		// Course
 		ListCourseGroups(ctx context.Context) ([]dto.AdminCourseGroupResponse, error)
-ListCoursesBySemester(ctx context.Context, semester int, courseName string) ([]dto.AdminCourseResponse, error)
+		ListCoursesBySemester(ctx context.Context, semester int, courseName string) ([]dto.AdminCourseResponse, error)
 		CreateCourse(ctx context.Context, req dto.AdminCreateCourseRequest) error
 		UpdateCourse(ctx context.Context, courseID string, req dto.AdminUpdateCourseRequest) (dto.AdminUpdateCourseResponse, error)
 		DeleteCourse(ctx context.Context, courseID string) error
+
+		// Schedule
 		ListScheduleGroups(ctx context.Context) ([]dto.AdminScheduleGroupResponse, error)
-ListSchedulesByFilter(ctx context.Context, academicYear, term, prodi, semester, courseName string) ([]dto.AdminScheduleResponse, error)
+		ListSchedulesByFilter(ctx context.Context, academicYear, term, prodi, semester, courseName string) ([]dto.AdminScheduleResponse, error)
 		CreateSchedule(ctx context.Context, req dto.AdminCreateScheduleRequest) error
 		UpdateSchedule(ctx context.Context, scheduleID string, req dto.AdminUpdateScheduleRequest) (dto.AdminUpdateScheduleResponse, error)
 		DeleteSchedule(ctx context.Context, scheduleID string) error
+		// Lab Path
+		GetAllLabPaths(ctx context.Context) ([]dto.AdminLabPathResponse, error)
+		CreateLabPath(ctx context.Context, req dto.CreateLabPathRequest) (dto.AdminLabPathResponse, error)
+		UpdateLabPath(ctx context.Context, id uuid.UUID, req dto.UpdateLabPathRequest) (dto.AdminLabPathResponse, error)
+		DeleteLabPath(ctx context.Context, id uuid.UUID) error
+
+		// Prerequisite
+		CreatePrerequisite(ctx context.Context, req dto.CreatePrerequisiteRequest) (dto.AdminPrerequisiteResponse, error)
+		DeletePrerequisite(ctx context.Context, courseID, requireID uuid.UUID) error
+
+		// Path Edge
+		CreatePathEdge(ctx context.Context, req dto.CreatePathEdgeRequest) (dto.AdminPathEdgeResponse, error)
+		DeletePathEdge(ctx context.Context, id uuid.UUID) error
+
+		// Lecture
+		GetAllLectures(ctx context.Context) ([]dto.AdminLectureResponse, error)
+		CreateLecture(ctx context.Context, req dto.CreateLectureRequest) (dto.AdminLectureResponse, error)
+		UpdateLecture(ctx context.Context, id uuid.UUID, req dto.UpdateLectureRequest) (dto.AdminLectureResponse, error)
 	}
 
 	adminService struct {
