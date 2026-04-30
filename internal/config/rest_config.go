@@ -35,6 +35,7 @@ func NewRestConfig(db *gorm.DB) *RestConfig {
 	fileController := provider.InvokeFileController()
 	frsController := provider.InvokeFRSController()
 	skillTreeController := provider.InvokeSkillTreeController()
+	adminController := provider.InvokeAdminController()
 
 	// Services needed for routes
 	jwtService := provider.InvokeJWTService()
@@ -44,6 +45,7 @@ func NewRestConfig(db *gorm.DB) *RestConfig {
 	routes.File(server, fileController, jwtService)
 	routes.FRS(server, frsController, jwtService)
 	routes.SkillTree(server, skillTreeController, jwtService)
+	routes.Admin(server, adminController, jwtService)
 
 	// Get configuration
 	port := os.Getenv("APP_PORT")
