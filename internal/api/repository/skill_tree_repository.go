@@ -60,7 +60,7 @@ func (r *skillTreeRepository) GetCourseByID(ctx context.Context, courseID uuid.U
 	var course entity.Course
 	err := r.db.WithContext(ctx).
 		Preload("LabPath").
-		Preload("PrerequisiteCourses.Require").
+		Preload("PrerequisitesRequiredFor.Require").
 		Where("id = ?", courseID).
 		First(&course).Error
 	if err != nil {

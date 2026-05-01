@@ -72,8 +72,8 @@ func (s *skillTreeService) GetNodeDetail(ctx context.Context, courseID uuid.UUID
 	}
 
 	// Prerequisites: courses that THIS course requires
-	prereqs := make([]dto.NodeCourseRef, 0, len(course.PrerequisiteCourses))
-	for _, p := range course.PrerequisiteCourses {
+	prereqs := make([]dto.NodeCourseRef, 0, len(course.PrerequisitesRequiredFor))
+	for _, p := range course.PrerequisitesRequiredFor {
 		if p.Require != nil {
 			prereqs = append(prereqs, dto.NodeCourseRef{
 				ID:       p.Require.ID.String(),
