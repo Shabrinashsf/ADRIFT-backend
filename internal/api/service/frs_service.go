@@ -638,6 +638,10 @@ func (s *frsService) CreateFRSPlan(ctx context.Context, userID string, req dto.C
 		return dto.ErrScheduleIDNotFound
 	}
 
+	if hasScheduleConflict(schedules) {
+		return dto.ErrScheduleConflict
+	}
+
 	tx := s.db.WithContext(ctx).Begin()
 	defer func() {
 		if r := recover(); r != nil {
@@ -983,6 +987,23 @@ StartAt:     s.StartTime.In(wibLocation).Format("15:04"),
 	EndAt:       s.EndTime.In(wibLocation).Format("15:04"),
 		SKS:         s.SKS,
 	}
+}
+
+func hasScheduleConflict(schedules []entity.Schedule) bool {
+	for i := 0; i < len(schedules); i++ {
+		for j := i + 1; j < len(schedules); j++ {
+			if schedules[i].Day == schedules[j].Day {
+				iStart := schedules[i].StartTime.In(wibLocation)
+				iEnd := schedules[i].EndTime.In(wibLocation)
+				jStart := schedules[j].StartTime.In(wibLocation)
+				jEnd := schedules[j].EndTime.In(wibLocation)
+				if iStart.Before(jEnd) && jStart.Before(iEnd) {
+					return true
+				}
+			}
+		}
+	}
+	return false
 }
 
 func hasTimeConflict(items []dto.AlternativeScheduleItem) bool {

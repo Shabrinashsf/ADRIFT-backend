@@ -45,6 +45,7 @@ var (
 	ErrPlanNotFound              = myerror.New("rencana frs tidak ditemukan", http.StatusNotFound)
 	ErrPlanNotOwnedByUser        = myerror.New("rencana frs bukan milik user ini", http.StatusForbidden)
 	ErrScheduleIDNotFound        = myerror.New("salah satu schedule_id tidak ditemukan", http.StatusNotFound)
+	ErrScheduleConflict           = myerror.New("jadwal bertabrakan, terdapat jadwal yang saling tumpang tindih", http.StatusConflict)
 	ErrNoAlternativeFound        = myerror.New("tidak ditemukan jadwal alternatif", http.StatusNotFound)
 )
 
