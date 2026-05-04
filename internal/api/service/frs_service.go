@@ -727,6 +727,14 @@ func (s *frsService) GetFRSPlanDetail(ctx context.Context, planID string, userID
 		return dto.FRSPlanDetailResponse{}, dto.ErrPlanNotFound
 	}
 
+	sort.Slice(plan.FRSPlanItems, func(i, j int) bool {
+		si, sj := plan.FRSPlanItems[i].Schedule, plan.FRSPlanItems[j].Schedule
+		if si.Day.Order() != sj.Day.Order() {
+			return si.Day.Order() < sj.Day.Order()
+		}
+		return si.StartTime.Before(sj.StartTime)
+	})
+
 	items := make([]dto.FRSPlanItemDetail, 0, len(plan.FRSPlanItems))
 	for _, item := range plan.FRSPlanItems {
 		schedule := item.Schedule

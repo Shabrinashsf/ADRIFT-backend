@@ -62,3 +62,20 @@ type Schedule struct {
 func (s *Schedule) TableName() string {
 	return "schedules"
 }
+
+var dayOrder = map[Day]int{
+	DaySenin:  1,
+	DaySelasa: 2,
+	DayRabu:   3,
+	DayKamis:  4,
+	DayJumat:  5,
+	DaySabtu:  6,
+	DayMinggu: 7,
+}
+
+func (d Day) Order() int {
+	if o, ok := dayOrder[d]; ok {
+		return o
+	}
+	return 99
+}
