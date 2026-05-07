@@ -35,10 +35,12 @@ type (
 		DeleteLabPath(ctx context.Context, id uuid.UUID) error
 
 		// Prerequisite
+		ListPrerequisites(ctx context.Context, courseName string) ([]dto.AdminPrerequisiteListResponse, error)
 		CreatePrerequisite(ctx context.Context, req dto.CreatePrerequisiteRequest) (dto.AdminPrerequisiteResponse, error)
 		DeletePrerequisite(ctx context.Context, courseID, requireID uuid.UUID) error
 
 		// Path Edge
+		ListPathEdges(ctx context.Context, fromCourseName, toCourseName string) ([]dto.AdminPathEdgeListResponse, error)
 		CreatePathEdge(ctx context.Context, req dto.CreatePathEdgeRequest) (dto.AdminPathEdgeResponse, error)
 		DeletePathEdge(ctx context.Context, id uuid.UUID) error
 
@@ -46,6 +48,7 @@ type (
 		GetAllLectures(ctx context.Context) ([]dto.AdminLectureResponse, error)
 		CreateLecture(ctx context.Context, req dto.CreateLectureRequest) (dto.AdminLectureResponse, error)
 		UpdateLecture(ctx context.Context, id uuid.UUID, req dto.UpdateLectureRequest) (dto.AdminLectureResponse, error)
+		DeleteLecture(ctx context.Context, id uuid.UUID) error
 	}
 
 	adminService struct {
@@ -535,6 +538,33 @@ func (s *adminService) DeleteLabPath(ctx context.Context, id uuid.UUID) error {
 
 // =========== PREREQUISITE ===========
 
+func (s *adminService) ListPrerequisites(ctx context.Context, courseName string) ([]dto.AdminPrerequisiteListResponse, error) {
+	prereqs, err := s.adminRepo.GetPrerequisites(ctx, courseName)
+	if err != nil {
+		return nil, err
+	}
+
+	result := make([]dto.AdminPrerequisiteListResponse, 0, len(prereqs))
+	for _, p := range prereqs {
+		courseNameVal := ""
+		if p.Course != nil {
+			courseNameVal = p.Course.Name
+		}
+		requireNameVal := ""
+		if p.Require != nil {
+			requireNameVal = p.Require.Name
+		}
+		result = append(result, dto.AdminPrerequisiteListResponse{
+			ID:          p.ID.String(),
+			CourseID:    p.CourseID.String(),
+			CourseName:  courseNameVal,
+			RequireID:   p.RequireID.String(),
+			RequireName: requireNameVal,
+		})
+	}
+	return result, nil
+}
+
 func (s *adminService) CreatePrerequisite(ctx context.Context, req dto.CreatePrerequisiteRequest) (dto.AdminPrerequisiteResponse, error) {
 	courseID, err := uuid.Parse(req.CourseID)
 	if err != nil {
@@ -578,6 +608,33 @@ func (s *adminService) DeletePrerequisite(ctx context.Context, courseID, require
 }
 
 // =========== PATH EDGE ===========
+
+func (s *adminService) ListPathEdges(ctx context.Context, fromCourseName, toCourseName string) ([]dto.AdminPathEdgeListResponse, error) {
+	edges, err := s.adminRepo.GetPathEdges(ctx, fromCourseName, toCourseName)
+	if err != nil {
+		return nil, err
+	}
+
+	result := make([]dto.AdminPathEdgeListResponse, 0, len(edges))
+	for _, e := range edges {
+		fromCourseNameVal := ""
+		if e.FromCourse != nil {
+			fromCourseNameVal = e.FromCourse.Name
+		}
+		toCourseNameVal := ""
+		if e.ToCourse != nil {
+			toCourseNameVal = e.ToCourse.Name
+		}
+		result = append(result, dto.AdminPathEdgeListResponse{
+			ID:             e.ID.String(),
+			FromCourseID:   e.FromCourseID.String(),
+			FromCourseName: fromCourseNameVal,
+			ToCourseID:     e.ToCourseID.String(),
+			ToCourseName:   toCourseNameVal,
+		})
+	}
+	return result, nil
+}
 
 func (s *adminService) CreatePathEdge(ctx context.Context, req dto.CreatePathEdgeRequest) (dto.AdminPathEdgeResponse, error) {
 	fromID, err := uuid.Parse(req.FromCourseID)
@@ -682,4 +739,12 @@ func (s *adminService) UpdateLecture(ctx context.Context, id uuid.UUID, req dto.
 		Code: updated.Code,
 		Name: updated.Name,
 	}, nil
+}
+
+func (s *adminService) DeleteLecture(ctx context.Context, id uuid.UUID) error {
+	_, err := s.adminRepo.GetLectureByID(ctx, id)
+	if err != nil {
+		return dto.ErrLectureNotFound
+	}
+	return s.adminRepo.DeleteLecture(ctx, id)
 }

@@ -40,10 +40,12 @@ func Admin(route *gin.Engine, adminController controller.AdminController, frsCon
 		admin.DELETE("/lab-paths/:labPathId", adminController.DeleteLabPath)
 
 		// Prerequisites
+		admin.GET("/prerequisites", adminController.ListPrerequisites)
 		admin.POST("/prerequisites", adminController.CreatePrerequisite)
 		admin.DELETE("/prerequisites/:courseId/:requireId", adminController.DeletePrerequisite)
 
 		// Path Edges
+		admin.GET("/path-edges", adminController.ListPathEdges)
 		admin.POST("/path-edges", adminController.CreatePathEdge)
 		admin.DELETE("/path-edges/:pathEdgeId", adminController.DeletePathEdge)
 
@@ -51,6 +53,7 @@ func Admin(route *gin.Engine, adminController controller.AdminController, frsCon
 		admin.GET("/lectures", adminController.GetAllLectures)
 		admin.POST("/lectures", adminController.CreateLecture)
 		admin.PATCH("/lectures/:lectureId", adminController.UpdateLecture)
+		admin.DELETE("/lectures/:lectureId", adminController.DeleteLecture)
 	}
 
 	authenticated := route.Group("api/assets").Use(middleware.Authenticate(jwtService))

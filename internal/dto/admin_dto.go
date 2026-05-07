@@ -174,14 +174,18 @@ const (
 	MESSAGE_FAILED_DELETE_LAB_PATH  = "Failed to delete lab path"
 
 	// Prerequisite
+	MESSAGE_SUCCESS_LIST_PREREQUISITES  = "Prerequisites retrieved successfully"
 	MESSAGE_SUCCESS_CREATE_PREREQUISITE = "Prerequisite created successfully"
 	MESSAGE_SUCCESS_DELETE_PREREQUISITE = "Prerequisite deleted successfully"
+	MESSAGE_FAILED_LIST_PREREQUISITES   = "Failed to retrieve prerequisites"
 	MESSAGE_FAILED_CREATE_PREREQUISITE  = "Failed to create prerequisite"
 	MESSAGE_FAILED_DELETE_PREREQUISITE  = "Failed to delete prerequisite"
 
 	// Path Edge
+	MESSAGE_SUCCESS_LIST_PATH_EDGES  = "Path edges retrieved successfully"
 	MESSAGE_SUCCESS_CREATE_PATH_EDGE = "Path edge created successfully"
 	MESSAGE_SUCCESS_DELETE_PATH_EDGE = "Path edge deleted successfully"
+	MESSAGE_FAILED_LIST_PATH_EDGES   = "Failed to retrieve path edges"
 	MESSAGE_FAILED_CREATE_PATH_EDGE  = "Failed to create path edge"
 	MESSAGE_FAILED_DELETE_PATH_EDGE  = "Failed to delete path edge"
 
@@ -189,9 +193,11 @@ const (
 	MESSAGE_SUCCESS_GET_LECTURES   = "Lectures retrieved successfully"
 	MESSAGE_SUCCESS_CREATE_LECTURE = "Lecture created successfully"
 	MESSAGE_SUCCESS_UPDATE_LECTURE = "Lecture updated successfully"
+	MESSAGE_SUCCESS_DELETE_LECTURE = "Lecture deleted successfully"
 	MESSAGE_FAILED_GET_LECTURES    = "Failed to retrieve lectures"
 	MESSAGE_FAILED_CREATE_LECTURE  = "Failed to create lecture"
 	MESSAGE_FAILED_UPDATE_LECTURE  = "Failed to update lecture"
+	MESSAGE_FAILED_DELETE_LECTURE  = "Failed to delete lecture"
 )
 
 // =========== ERRORS ===========
@@ -233,6 +239,14 @@ type AdminPrerequisiteResponse struct {
 	RequireID string `json:"require_id"`
 }
 
+type AdminPrerequisiteListResponse struct {
+	ID          string `json:"id"`
+	CourseID    string `json:"course_id"`
+	CourseName  string `json:"course_name"`
+	RequireID   string `json:"require_id"`
+	RequireName string `json:"require_name"`
+}
+
 type CreatePrerequisiteRequest struct {
 	CourseID  string `json:"course_id" binding:"required"`
 	RequireID string `json:"require_id" binding:"required"`
@@ -244,6 +258,14 @@ type AdminPathEdgeResponse struct {
 	ID           string `json:"id"`
 	FromCourseID string `json:"from_course_id"`
 	ToCourseID   string `json:"to_course_id"`
+}
+
+type AdminPathEdgeListResponse struct {
+	ID             string `json:"id"`
+	FromCourseID   string `json:"from_course_id"`
+	FromCourseName string `json:"from_course_name"`
+	ToCourseID     string `json:"to_course_id"`
+	ToCourseName   string `json:"to_course_name"`
 }
 
 type CreatePathEdgeRequest struct {

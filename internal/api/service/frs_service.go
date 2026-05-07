@@ -61,7 +61,6 @@ const (
 	scheduleUploadMetaPath = "database/json/schedule_upload_meta.json"
 	frsTempPrefix          = "tmp/frs/"
 	frsPrefix              = "frs/"
-	schedulePendingTTL     = 24 * time.Hour
 )
 
 var wibLocation, _ = time.LoadLocation("Asia/Jakarta")
@@ -432,11 +431,8 @@ func (s *frsService) enforcePendingUpload(ctx context.Context) error {
 		return nil
 	}
 
-	if time.Since(meta.CreatedAt) > schedulePendingTTL {
-		return s.cleanupPendingUpload(meta)
-	}
-
-	return buildSchedulePendingError(meta)
+	// Always clear previous pending upload so new uploads are accepted.
+	return s.cleanupPendingUpload(meta)
 }
 
 func (s *frsService) cleanupPendingUpload(meta *scheduleUploadMeta) error {
@@ -991,8 +987,8 @@ func scheduleToAlternativeItem(s entity.Schedule) dto.AlternativeScheduleItem {
 		Class:       s.Class,
 		LectureName: lectureName,
 		Day:         string(s.Day),
-StartAt:     s.StartTime.In(wibLocation).Format("15:04"),
-	EndAt:       s.EndTime.In(wibLocation).Format("15:04"),
+		StartAt:     s.StartTime.In(wibLocation).Format("15:04"),
+		EndAt:       s.EndTime.In(wibLocation).Format("15:04"),
 		SKS:         s.SKS,
 	}
 }

@@ -38,10 +38,12 @@ type (
 		DeleteLabPath(ctx *gin.Context)
 
 		// Prerequisite
+		ListPrerequisites(ctx *gin.Context)
 		CreatePrerequisite(ctx *gin.Context)
 		DeletePrerequisite(ctx *gin.Context)
 
 		// Path Edge
+		ListPathEdges(ctx *gin.Context)
 		CreatePathEdge(ctx *gin.Context)
 		DeletePathEdge(ctx *gin.Context)
 
@@ -49,6 +51,7 @@ type (
 		GetAllLectures(ctx *gin.Context)
 		CreateLecture(ctx *gin.Context)
 		UpdateLecture(ctx *gin.Context)
+		DeleteLecture(ctx *gin.Context)
 	}
 
 	adminController struct {
@@ -312,6 +315,20 @@ func (c *adminController) DeleteLabPath(ctx *gin.Context) {
 
 // =========== PREREQUISITE ===========
 
+func (c *adminController) ListPrerequisites(ctx *gin.Context) {
+	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
+	defer cancel()
+
+	courseName := ctx.Query("course_name")
+
+	result, err := c.adminService.ListPrerequisites(reqCtx, courseName)
+	if err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_LIST_PREREQUISITES, err, nil).Send(ctx)
+		return
+	}
+	response.NewSuccess(dto.MESSAGE_SUCCESS_LIST_PREREQUISITES, result).Send(ctx)
+}
+
 func (c *adminController) CreatePrerequisite(ctx *gin.Context) {
 	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
 	defer cancel()
@@ -352,6 +369,21 @@ func (c *adminController) DeletePrerequisite(ctx *gin.Context) {
 }
 
 // =========== PATH EDGE ===========
+
+func (c *adminController) ListPathEdges(ctx *gin.Context) {
+	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
+	defer cancel()
+
+	fromCourse := ctx.Query("from_course")
+	toCourse := ctx.Query("to_course")
+
+	result, err := c.adminService.ListPathEdges(reqCtx, fromCourse, toCourse)
+	if err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_LIST_PATH_EDGES, err, nil).Send(ctx)
+		return
+	}
+	response.NewSuccess(dto.MESSAGE_SUCCESS_LIST_PATH_EDGES, result).Send(ctx)
+}
 
 func (c *adminController) CreatePathEdge(ctx *gin.Context) {
 	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
@@ -439,4 +471,21 @@ func (c *adminController) UpdateLecture(ctx *gin.Context) {
 		return
 	}
 	response.NewSuccess(dto.MESSAGE_SUCCESS_UPDATE_LECTURE, result).Send(ctx)
+}
+
+func (c *adminController) DeleteLecture(ctx *gin.Context) {
+	reqCtx, cancel := context.WithTimeout(ctx.Request.Context(), 20*time.Second)
+	defer cancel()
+
+	lectureID, err := uuid.Parse(ctx.Param("lectureId"))
+	if err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_DELETE_LECTURE, myerror.New("invalid lecture id", http.StatusBadRequest), nil).Send(ctx)
+		return
+	}
+
+	if err := c.adminService.DeleteLecture(reqCtx, lectureID); err != nil {
+		response.NewFailed(dto.MESSAGE_FAILED_DELETE_LECTURE, err, nil).Send(ctx)
+		return
+	}
+	response.NewSuccess(dto.MESSAGE_SUCCESS_DELETE_LECTURE, nil).Send(ctx)
 }

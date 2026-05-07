@@ -51,12 +51,14 @@ type (
 		DeleteLabPath(ctx context.Context, id uuid.UUID) error
 
 		// Prerequisite
+		GetPrerequisites(ctx context.Context, courseName string) ([]entity.Prerequisite, error)
 		GetPrerequisiteByCourseAndRequire(ctx context.Context, courseID, requireID uuid.UUID) (*entity.Prerequisite, error)
 		GetPrerequisiteByID(ctx context.Context, courseID, requireID uuid.UUID) (*entity.Prerequisite, error)
 		CreatePrerequisite(ctx context.Context, prereq *entity.Prerequisite) error
 		DeletePrerequisite(ctx context.Context, courseID, requireID uuid.UUID) error
 
 		// Path Edge
+		GetPathEdges(ctx context.Context, fromCourseName, toCourseName string) ([]entity.PathEdge, error)
 		GetPathEdgeByID(ctx context.Context, id uuid.UUID) (*entity.PathEdge, error)
 		GetPathEdgeByFromTo(ctx context.Context, fromID, toID uuid.UUID) (*entity.PathEdge, error)
 		CreatePathEdge(ctx context.Context, edge *entity.PathEdge) error
@@ -68,6 +70,7 @@ type (
 		GetLectureByCode(ctx context.Context, code string) (*entity.Lecture, error)
 		CreateLecture(ctx context.Context, lecture *entity.Lecture) error
 		UpdateLecture(ctx context.Context, id uuid.UUID, updates map[string]interface{}) (*entity.Lecture, error)
+		DeleteLecture(ctx context.Context, id uuid.UUID) error
 	}
 
 	adminRepository struct {
@@ -298,6 +301,21 @@ func (r *adminRepository) DeleteLabPath(ctx context.Context, id uuid.UUID) error
 
 // =========== PREREQUISITE ===========
 
+func (r *adminRepository) GetPrerequisites(ctx context.Context, courseName string) ([]entity.Prerequisite, error) {
+	var prereqs []entity.Prerequisite
+	q := r.db.WithContext(ctx).
+		Model(&entity.Prerequisite{}).
+		Joins("LEFT JOIN courses course ON course.id = prerequisites.course_id").
+		Joins("LEFT JOIN courses require_course ON require_course.id = prerequisites.require_id")
+	if courseName != "" {
+		q = q.Where("course.name ILIKE ?", "%"+courseName+"%")
+	}
+	if err := q.Preload("Course").Preload("Require").Order("course.name asc, require_course.name asc").Find(&prereqs).Error; err != nil {
+		return nil, err
+	}
+	return prereqs, nil
+}
+
 func (r *adminRepository) GetPrerequisiteByCourseAndRequire(ctx context.Context, courseID, requireID uuid.UUID) (*entity.Prerequisite, error) {
 	var prereq entity.Prerequisite
 	err := r.db.WithContext(ctx).Where("course_id = ? AND require_id = ?", courseID, requireID).First(&prereq).Error
@@ -320,6 +338,24 @@ func (r *adminRepository) DeletePrerequisite(ctx context.Context, courseID, requ
 }
 
 // =========== PATH EDGE ===========
+
+func (r *adminRepository) GetPathEdges(ctx context.Context, fromCourseName, toCourseName string) ([]entity.PathEdge, error) {
+	var edges []entity.PathEdge
+	q := r.db.WithContext(ctx).
+		Model(&entity.PathEdge{}).
+		Joins("LEFT JOIN courses from_course ON from_course.id = path_edges.from_course_id").
+		Joins("LEFT JOIN courses to_course ON to_course.id = path_edges.to_course_id")
+	if fromCourseName != "" {
+		q = q.Where("from_course.name ILIKE ?", "%"+fromCourseName+"%")
+	}
+	if toCourseName != "" {
+		q = q.Where("to_course.name ILIKE ?", "%"+toCourseName+"%")
+	}
+	if err := q.Preload("FromCourse").Preload("ToCourse").Order("from_course.name asc, to_course.name asc").Find(&edges).Error; err != nil {
+		return nil, err
+	}
+	return edges, nil
+}
 
 func (r *adminRepository) GetPathEdgeByID(ctx context.Context, id uuid.UUID) (*entity.PathEdge, error) {
 	var edge entity.PathEdge
@@ -382,4 +418,8 @@ func (r *adminRepository) UpdateLecture(ctx context.Context, id uuid.UUID, updat
 		return nil, err
 	}
 	return r.GetLectureByID(ctx, id)
+}
+
+func (r *adminRepository) DeleteLecture(ctx context.Context, id uuid.UUID) error {
+	return r.db.WithContext(ctx).Where("id = ?", id).Delete(&entity.Lecture{}).Error
 }
