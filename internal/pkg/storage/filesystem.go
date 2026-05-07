@@ -73,8 +73,10 @@ func (fs *filesystemStorage) UploadFile(filename string, file *multipart.FileHea
 	safeFilename := fmt.Sprintf("%s", filename)
 
 	folderPath := filepath.Join(fs.uploadPath, folderName)
-	if err := os.MkdirAll(folderPath, 0755); err != nil {
-		return "", fmt.Errorf("failed to create directory: %w", err)
+	if folderInfo, err := os.Stat(folderPath); err != nil {
+		return "", fmt.Errorf("upload directory is missing: %w", err)
+	} else if !folderInfo.IsDir() {
+		return "", fmt.Errorf("upload path is not a directory: %s", folderPath)
 	}
 
 	fullPath := filepath.Join(folderPath, safeFilename)
