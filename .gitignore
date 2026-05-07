@@ -5,5 +5,4 @@ tests/
 .DS_Store
 .idea/
 .vscode
-tmp/
 logs/
